@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
     public static bool DidAgentReachDestination(NavMeshAgent agent)
     {
         var distance = Vector3.Distance(agent.gameObject.transform.position, agent.destination);
-        return distance + 1 <= agent.stoppingDistance;
+        return distance <= agent.stoppingDistance;
     }
 
     private void flipTarget(NavMeshAgent agent)
