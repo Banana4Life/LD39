@@ -38,3 +38,6 @@ sysinfo.txt
 !/.idea/.idea.*/.idea/codeStyleSettings.xml
 *.iml
 
+Thumbs.db
+Thumbs.db.meta
+
