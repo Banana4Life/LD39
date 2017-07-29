@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
         }
     }
     
-    private static bool DidAgentReachDestination(NavMeshAgent agent)
+    public static bool DidAgentReachDestination(NavMeshAgent agent)
     {
         var distance = Vector3.Distance(agent.gameObject.transform.position, agent.destination);
         return distance <= agent.stoppingDistance;
