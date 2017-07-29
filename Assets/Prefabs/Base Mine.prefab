@@ -101,7 +101,7 @@ MonoBehaviour:
   timeToSpawn: 0.41506052
   interval: 5
   enemyCount: 15
-  enemyPerWave: 15
+  enemyPerWave: 10
   dead: 0
 --- !u!136 &136943091970096314
 CapsuleCollider:

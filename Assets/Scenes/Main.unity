@@ -471,11 +471,6 @@ Prefab:
       propertyPath: m_Name
       value: Base Mine SE
       objectReference: {fileID: 0}
-    - target: {fileID: 114434603169873210, guid: d063ceecd54524a5fa5a24bd51500318,
-        type: 2}
-      propertyPath: enemyPerWave
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d063ceecd54524a5fa5a24bd51500318, type: 2}
   m_IsPrefabParent: 0
@@ -626,22 +621,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1451608478974348, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 114430586079102700, guid: 9a2963fa140cf4d689f1be3bf557f223,
         type: 2}
       propertyPath: list.Array.data[0]
@@ -662,6 +641,25 @@ Prefab:
       propertyPath: list.Array.data[3]
       value: 
       objectReference: {fileID: 968338213}
+    - target: {fileID: 1451608478974348, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772935880850960, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: mineObject
+      value: 
+      objectReference: {fileID: 364315781}
+    - target: {fileID: 114772935880850960, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: baseObject
+      value: 
+      objectReference: {fileID: 837231385}
+    - target: {fileID: 114772935880850960, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: lastTarget
+      value: 
+      objectReference: {fileID: 701404853}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
   m_IsPrefabParent: 0
@@ -983,39 +981,3 @@ GameObject:
   m_PrefabParentObject: {fileID: 1451608478974348, guid: 9a2963fa140cf4d689f1be3bf557f223,
     type: 2}
   m_PrefabInternal: {fileID: 925432566}
---- !u!195 &1946407998
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1946407997}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.49999997
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 1
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.99999994
-  m_BaseOffset: 0.49999997
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &1946408004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1946407997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2c9a3bed66141fdad671716918a536, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mineObject: {fileID: 364315781}
-  baseObject: {fileID: 837231385}
-  lastTarget: {fileID: 701404853}
-  restart: 0
