@@ -93,11 +93,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cb2a273dac0484da5164d10b18aff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainBase: {fileID: 0}
   entities: []
-  type1: {fileID: 1801759079588420, guid: 1b2496d4eb3ce4d40a2207823046d4a6, type: 2}
-  targetTime: 0
+  types:
+  - {fileID: 1801759079588420, guid: 1b2496d4eb3ce4d40a2207823046d4a6, type: 2}
+  - {fileID: 1307436241746088, guid: 949a44be5a9e241f18c819e0a5ef4f1a, type: 2}
+  timeToSpawn: 0
   interval: 3
   enemyPerWave: 5
+  dead: 0
 --- !u!136 &136943091970096314
 CapsuleCollider:
   m_ObjectHideFlags: 1

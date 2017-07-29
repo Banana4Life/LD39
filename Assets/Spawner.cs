@@ -1,35 +1,69 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+
+public class ReadOnlyAttribute : PropertyAttribute
+{
+ 
+}
+
+[CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
+public class ReadOnlyDrawer : PropertyDrawer
+{
+	public override float GetPropertyHeight(SerializedProperty property,
+		GUIContent label)
+	{
+		return EditorGUI.GetPropertyHeight(property, label, true);
+	}
+ 
+	public override void OnGUI(Rect position,
+		SerializedProperty property,
+		GUIContent label)
+	{
+		GUI.enabled = false;
+		EditorGUI.PropertyField(position, property, label, true);
+		GUI.enabled = true;
+	}
+}
 
 public class Spawner : MonoBehaviour
 {
-	public GameObject mainBase;
-	public List<GameObject> entities = new List<GameObject>();
-	public GameObject type1;
 
-	public float timeToSpawn;
+	
+	public GameObject mainBase;
+	public List<GameObject> types;
+
+	[ReadOnly] public int nextType;
+	[ReadOnly] public float timeToSpawn;
 	public float interval = 3;
-	private int enemyCount;
+	[ReadOnly] private int enemyCount;
 
 	public int enemyPerWave = 5;
-	private int enemiesToSpawn;
+	[ReadOnly] public int enemiesToSpawn;
+
+	public bool dead;
 
 	// Use this for initialization
 	void Start ()
 	{
+		nextType = 0;
 		enemiesToSpawn = enemyPerWave;
 		timeToSpawn = interval;
+		dead = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		timeToSpawn -= Time.deltaTime;
-		if (timeToSpawn <= 0)
+		if (!dead)
 		{
-			timeToSpawn = interval;
-			SpawnEnemy(type1);
+			timeToSpawn -= Time.deltaTime;
+			if (timeToSpawn <= 0)
+			{
+				timeToSpawn = interval;
+				SpawnEnemy(types[nextType]);
+			}	
 		}
 	}
 
@@ -43,6 +77,23 @@ public class Spawner : MonoBehaviour
 			var enemyController = enemy.GetComponent<EnemyController>();
 			enemyController.mineObject = gameObject;
 			enemyController.baseObject = mainBase;
+			enemyController.transform.position = gameObject.transform.position;
 		}
+		if (gameObject.transform.childCount == 0)
+		{
+			Debug.Log("Empty Lane! Upgrading Defences...");
+			dead = true;
+			var spawners = gameObject.transform.parent.GetComponentsInChildren<Spawner>();
+			foreach (var spawner in spawners)
+			{
+				spawner.UpgradeDefences();
+			}
+		}
+	}
+
+	public void UpgradeDefences()
+	{
+		nextType++;
+		enemiesToSpawn = enemyPerWave;
 	}
 }
