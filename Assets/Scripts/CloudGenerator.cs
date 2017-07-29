@@ -9,18 +9,19 @@ public class CloudGenerator : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		generateClouds(gameObject.transform.parent.gameObject);
+		generateClouds(GameObject.Find("Asteroids"));
 	}
 	
-	public void generateClouds(GameObject map)
+	public void generateClouds(GameObject astroidContainer)
 	{
-		var distScript = map.GetComponentInChildren<RandomDistributionScript>();
+		
+		var distScript = astroidContainer.GetComponent<RandomDistributionScript>();
 		int i = 0;
 		for (var x = 0; x < distScript.bounds.x; x+=2)
 		{
 			for (var z = 0; z < distScript.bounds.z; z+=2)
 			{
-				if (hasClouds(new Vector2(x, z), cloudMap, map))
+				if (hasClouds(new Vector2(x, z), cloudMap, astroidContainer))
 				{
 					var aCloud = Instantiate(cloud, gameObject.transform);
 					aCloud.transform.localPosition = new Vector3(x, 2, z);
