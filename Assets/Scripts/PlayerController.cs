@@ -8,9 +8,9 @@ public class PlayerController : MonoBehaviour
 	public float speed = 3;
 	
 	public List<GameObject> list;
-	public int walkTo;
+	[ReadOnly] public int walkTo;
 
-	[ReadOnly] public bool restart = true;
+	public bool restart = true;
 	public bool autoPilot = true;
 	
 	// Update is called once per frame

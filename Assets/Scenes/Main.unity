@@ -457,7 +457,7 @@ Prefab:
     - target: {fileID: 114434603169873210, guid: d063ceecd54524a5fa5a24bd51500318,
         type: 2}
       propertyPath: enemyPerWave
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d063ceecd54524a5fa5a24bd51500318, type: 2}
@@ -925,7 +925,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4545266511330496, guid: fe81de91b227945edb10a4b5df1e9314, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe81de91b227945edb10a4b5df1e9314, type: 2}
