@@ -52,9 +52,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4337748169643250}
-  - component: {fileID: 114489835880554180}
-  - component: {fileID: 114441781200952782}
-  - component: {fileID: 114331838415186514}
+  - component: {fileID: 114038792272469694}
+  - component: {fileID: 114685411905631988}
   m_Layer: 0
   m_Name: Asteroids
   m_TagString: Untagged
@@ -188,115 +187,7 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114294564001880704
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1178773563243894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
---- !u!114 &114331838415186514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331777967604010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a47a223f9a52e747b0854dbb8befb6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool:
-  - {fileID: 1269516339467370, guid: 1b3c1c251e5b546089f513221f01316f, type: 2}
-  poolWeight:
-  - 1
-  amount: 100
-  bounds: {x: 50, y: 0, z: 50}
-  distributionMap: {fileID: 2800000, guid: b715f511f893f4a1b8040de05cc54f7a, type: 3}
-  filterType: 0
-  inverted: 0
-  applyVertexColor: 0
-  combineMeshes: 0
-  distributionType: 0
-  seed: 0
-  projectToSurface: 0
-  maskType: 1
-  maskChannel: 0
-  maskThreshold: 0.239
-  colorType: 0
-  colorChannel: 1
-  colorMax: {r: 0, g: 0, b: 0, a: 1}
-  colorMin: {r: 1, g: 1, b: 1, a: 1}
-  scaleType: 0
-  scaleChannel: 2
-  scaleMax: 1
-  scaleMin: 0.25
-  rotationType: 1
-  rotationDeltaX: 0
-  rotationDeltaY: 180
-  rotationDeltaZ: 0
---- !u!114 &114441781200952782
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331777967604010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a47a223f9a52e747b0854dbb8befb6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool:
-  - {fileID: 1269516339467370, guid: 1b3c1c251e5b546089f513221f01316f, type: 2}
-  poolWeight:
-  - 1
-  amount: 100
-  bounds: {x: 50, y: 0, z: 50}
-  distributionMap: {fileID: 2800000, guid: b715f511f893f4a1b8040de05cc54f7a, type: 3}
-  filterType: 0
-  inverted: 0
-  applyVertexColor: 0
-  combineMeshes: 0
-  distributionType: 0
-  seed: 0
-  projectToSurface: 0
-  maskType: 1
-  maskChannel: 0
-  maskThreshold: 0.239
-  colorType: 0
-  colorChannel: 1
-  colorMax: {r: 0, g: 0, b: 0, a: 1}
-  colorMin: {r: 1, g: 1, b: 1, a: 1}
-  scaleType: 0
-  scaleChannel: 2
-  scaleMax: 1
-  scaleMin: 0.25
-  rotationType: 1
-  rotationDeltaX: 0
-  rotationDeltaY: 180
-  rotationDeltaZ: 0
---- !u!114 &114489835880554180
+--- !u!114 &114038792272469694
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -340,6 +231,34 @@ MonoBehaviour:
   rotationDeltaX: 0
   rotationDeltaY: 180
   rotationDeltaZ: 0
+--- !u!114 &114294564001880704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1178773563243894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!114 &114563437628004444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,8 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66542cacd4b524b6ea51291a98102b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloudMap: {fileID: 0}
-  cloud: {fileID: 0}
+  cloudMap: {fileID: 2800000, guid: 40b74c5b318304609a5ba44e7cb74912, type: 3}
+  cloud: {fileID: 1385795976155268, guid: 10fa70357cb9d4b16813c8d7c23f86a3, type: 2}
 --- !u!114 &114627430852140160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -365,3 +284,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateMesh: 1
+--- !u!114 &114685411905631988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1331777967604010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a47a223f9a52e747b0854dbb8befb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool:
+  - {fileID: 1269516339467370, guid: 1b3c1c251e5b546089f513221f01316f, type: 2}
+  poolWeight:
+  - 1
+  amount: 100
+  bounds: {x: 50, y: 0, z: 50}
+  distributionMap: {fileID: 2800000, guid: b715f511f893f4a1b8040de05cc54f7a, type: 3}
+  filterType: 0
+  inverted: 0
+  applyVertexColor: 0
+  combineMeshes: 0
+  distributionType: 0
+  seed: 0
+  projectToSurface: 0
+  maskType: 1
+  maskChannel: 0
+  maskThreshold: 0.239
+  colorType: 0
+  colorChannel: 1
+  colorMax: {r: 0, g: 0, b: 0, a: 1}
+  colorMin: {r: 1, g: 1, b: 1, a: 1}
+  scaleType: 0
+  scaleChannel: 2
+  scaleMax: 1
+  scaleMin: 0.25
+  rotationType: 1
+  rotationDeltaX: 0
+  rotationDeltaY: 180
+  rotationDeltaZ: 0

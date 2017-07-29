@@ -305,6 +305,9 @@ public class RandomDistributionScript : MonoBehaviour {
 		}
 		//reset seed
 		Random.seed = (int)System.DateTime.Now.Ticks;
+
+		var map = transform.parent.GetComponent<MapScript>();
+		map.UpdateMesh();
 	}
 	
 	private Vector2 FindMapPosition(Vector3 pos)

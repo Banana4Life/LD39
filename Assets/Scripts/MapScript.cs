@@ -13,9 +13,14 @@ public class MapScript : MonoBehaviour
 	{
 		if (updateMesh)
 		{
-			var navMeshSurface = GetComponent<NavMeshSurface>();
-			navMeshSurface.BuildNavMesh();
+			UpdateMesh();
 			updateMesh = false;
 		}
+	}
+
+	public void UpdateMesh()
+	{
+		var navMeshSurface = GetComponent<NavMeshSurface>();
+		navMeshSurface.BuildNavMesh();
 	}
 }
