@@ -44,23 +44,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1331777967604010
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4337748169643250}
-  - component: {fileID: 114038792272469694}
-  - component: {fileID: 114685411905631988}
-  m_Layer: 0
-  m_Name: Asteroids
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1659316757573378
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,23 +72,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
-  - {fileID: 4337748169643250}
   - {fileID: 4506906908258722}
   - {fileID: 4797123513386388}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4337748169643250
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331777967604010}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4071225148755384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4506906908258722
@@ -119,7 +88,7 @@ Transform:
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 4071225148755384}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4797123513386388
 Transform:
@@ -132,7 +101,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4071225148755384}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23349805248613368
 MeshRenderer:
@@ -187,50 +156,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114038792272469694
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331777967604010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a47a223f9a52e747b0854dbb8befb6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool:
-  - {fileID: 1949748232477746, guid: baa5decf148124d60a4800bee0d213b9, type: 2}
-  - {fileID: 1950436706973414, guid: 03f8f120871544b639deb499a79d0e22, type: 2}
-  - {fileID: 1100739322972980, guid: eb3fa33c3aeec47efac5a988908565e8, type: 2}
-  poolWeight:
-  - 1
-  - 0.303
-  - 0.009
-  amount: 3000
-  bounds: {x: 50, y: 0, z: 50}
-  distributionMap: {fileID: 2800000, guid: b715f511f893f4a1b8040de05cc54f7a, type: 3}
-  filterType: 0
-  inverted: 1
-  applyVertexColor: 0
-  combineMeshes: 0
-  distributionType: 1
-  seed: 0
-  projectToSurface: 0
-  maskType: 1
-  maskChannel: 1
-  maskThreshold: 0.239
-  colorType: 0
-  colorChannel: 1
-  colorMax: {r: 0, g: 0, b: 0, a: 1}
-  colorMin: {r: 1, g: 1, b: 1, a: 1}
-  scaleType: 0
-  scaleChannel: 2
-  scaleMax: 1
-  scaleMin: 0.25
-  rotationType: 1
-  rotationDeltaX: 0
-  rotationDeltaY: 180
-  rotationDeltaZ: 0
 --- !u!114 &114294564001880704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,43 +209,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateMesh: 1
---- !u!114 &114685411905631988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1331777967604010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a47a223f9a52e747b0854dbb8befb6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pool:
-  - {fileID: 1269516339467370, guid: 1b3c1c251e5b546089f513221f01316f, type: 2}
-  poolWeight:
-  - 1
-  amount: 100
-  bounds: {x: 50, y: 0, z: 50}
-  distributionMap: {fileID: 2800000, guid: b715f511f893f4a1b8040de05cc54f7a, type: 3}
-  filterType: 0
-  inverted: 0
-  applyVertexColor: 0
-  combineMeshes: 0
-  distributionType: 0
-  seed: 0
-  projectToSurface: 0
-  maskType: 1
-  maskChannel: 0
-  maskThreshold: 0.239
-  colorType: 0
-  colorChannel: 1
-  colorMax: {r: 0, g: 0, b: 0, a: 1}
-  colorMin: {r: 1, g: 1, b: 1, a: 1}
-  scaleType: 0
-  scaleChannel: 2
-  scaleMax: 1
-  scaleMin: 0.25
-  rotationType: 1
-  rotationDeltaX: 0
-  rotationDeltaY: 180
-  rotationDeltaZ: 0
