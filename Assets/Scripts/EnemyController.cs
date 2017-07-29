@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
 
     public bool restart;
 
+    public bool active = false;
+
     // Update is called once per frame
     void Update()
     {

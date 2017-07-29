@@ -11,15 +11,12 @@ public class ReadOnlyAttribute : PropertyAttribute
 [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
 public class ReadOnlyDrawer : PropertyDrawer
 {
-	public override float GetPropertyHeight(SerializedProperty property,
-		GUIContent label)
+	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 	{
 		return EditorGUI.GetPropertyHeight(property, label, true);
 	}
  
-	public override void OnGUI(Rect position,
-		SerializedProperty property,
-		GUIContent label)
+	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 	{
 		GUI.enabled = false;
 		EditorGUI.PropertyField(position, property, label, true);
@@ -29,18 +26,17 @@ public class ReadOnlyDrawer : PropertyDrawer
 
 public class Spawner : MonoBehaviour
 {
-
-	
 	public GameObject mainBase;
 	public List<GameObject> types;
 
-	[ReadOnly] public int nextType;
+	private Queue<GameObject> entities = new Queue<GameObject>();
+
+	[ReadOnly] public int nextType = -1;
 	[ReadOnly] public float timeToSpawn;
 	public float interval = 3;
 	[ReadOnly] public int enemyCount = 1;
 
 	public int enemyPerWave = 5;
-	[ReadOnly] public int enemiesToSpawn;
 
 	public bool dead;
 
@@ -48,9 +44,9 @@ public class Spawner : MonoBehaviour
 	void Start ()
 	{
 		nextType = 0;
-		enemiesToSpawn = enemyPerWave;
 		timeToSpawn = interval;
 		dead = false;
+		UpgradeDefences();
 	}
 	
 	// Update is called once per frame
@@ -69,26 +65,33 @@ public class Spawner : MonoBehaviour
 
 	public void SpawnEnemy(GameObject type)
 	{
-		if (enemiesToSpawn > 0)
+		var spawners = gameObject.transform.parent.GetComponentsInChildren<Spawner>();
+
+		if (entities.Count > 0)
 		{
-			enemiesToSpawn--;
-			var enemy = Instantiate(type, gameObject.transform);
-			enemy.name = "Enemy LVL " + (nextType + 1) + ": " + enemyCount++;
-			var enemyController = enemy.GetComponent<EnemyController>();
-			enemyController.mineObject = gameObject;
-			enemyController.baseObject = mainBase;
-			enemyController.transform.position = gameObject.transform.position;
+			entities.Dequeue().SetActive(true);
 		}
-		if (gameObject.transform.childCount == 0)
+		else if (gameObject.transform.childCount == 0)
 		{
 			Debug.Log("Empty Lane! Upgrading Defences...");
 			dead = true;
-			var spawners = gameObject.transform.parent.GetComponentsInChildren<Spawner>();
+			
 			foreach (var spawner in spawners)
 			{
 				spawner.UpgradeDefences();
 			}
 		}
+	}
+
+	private GameObject doSpawnEnemy(GameObject type)
+	{
+		var enemy = Instantiate(type, gameObject.transform.position + Vector3.right, Quaternion.identity, gameObject.transform);
+		enemy.name = "Enemy LVL " + (nextType + 1) + ": " + enemyCount++;
+		var enemyController = enemy.GetComponent<EnemyController>();
+		enemyController.mineObject = gameObject;
+		enemyController.baseObject = mainBase;
+		enemyController.active = true;
+		return enemy;
 	}
 
 	public void UpgradeDefences()
@@ -97,6 +100,18 @@ public class Spawner : MonoBehaviour
 		{
 			nextType++;
 		}
-		enemiesToSpawn = enemyPerWave;
+		var oldCount = entities.Count;
+		foreach (var entity in entities)
+		{
+			Destroy(entity);
+		}
+		entities.Clear();
+		for (var j = 0; j < enemyPerWave + oldCount; j++)
+		{
+			var spawned = doSpawnEnemy(types[0]);
+			
+			entities.Enqueue(spawned);
+			spawned.SetActive(false);
+		}
 	}
 }

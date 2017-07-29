@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 	private void nextTarget(NavMeshAgent agent)
 	{
 		walkTo++;
-		if (walkTo > list.Count)
+		if (walkTo >= list.Count)
 		{
 			walkTo = 0;
 		}
