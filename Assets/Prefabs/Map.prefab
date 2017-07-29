@@ -28,6 +28,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1261782063728936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4797123513386388}
+  - component: {fileID: 114563437628004444}
+  m_Layer: 0
+  m_Name: Clouds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1331777967604010
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +92,7 @@ Transform:
   m_Children:
   - {fileID: 4337748169643250}
   - {fileID: 4506906908258722}
+  - {fileID: 4797123513386388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,10 +117,23 @@ Transform:
   m_GameObject: {fileID: 1659316757573378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 24.96, y: -0, z: 24.58}
-  m_LocalScale: {x: 4.9967494, y: 0.99999946, z: 4.9967413}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 4071225148755384}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4797123513386388
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261782063728936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4071225148755384}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23349805248613368
 MeshRenderer:
@@ -283,9 +313,9 @@ MonoBehaviour:
   - {fileID: 1100739322972980, guid: eb3fa33c3aeec47efac5a988908565e8, type: 2}
   poolWeight:
   - 1
-  - 0.208
+  - 0.303
   - 0.009
-  amount: 1410
+  amount: 3000
   bounds: {x: 50, y: 0, z: 50}
   distributionMap: {fileID: 2800000, guid: b715f511f893f4a1b8040de05cc54f7a, type: 3}
   filterType: 0
@@ -310,6 +340,19 @@ MonoBehaviour:
   rotationDeltaX: 0
   rotationDeltaY: 180
   rotationDeltaZ: 0
+--- !u!114 &114563437628004444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261782063728936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66542cacd4b524b6ea51291a98102b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudMap: {fileID: 0}
+  cloud: {fileID: 0}
 --- !u!114 &114627430852140160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,5 +365,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updateMesh: 1
-  dimension: {x: 5, y: 5}
-  asteroid: {fileID: 0}
