@@ -379,6 +379,11 @@ Prefab:
       propertyPath: m_Name
       value: Base Mine SE
       objectReference: {fileID: 0}
+    - target: {fileID: 114434603169873210, guid: d063ceecd54524a5fa5a24bd51500318,
+        type: 2}
+      propertyPath: enemyPerWave
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d063ceecd54524a5fa5a24bd51500318, type: 2}
   m_IsPrefabParent: 0

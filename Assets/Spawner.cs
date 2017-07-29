@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
 	[ReadOnly] public int nextType;
 	[ReadOnly] public float timeToSpawn;
 	public float interval = 3;
-	[ReadOnly] private int enemyCount;
+	[ReadOnly] public int enemyCount = 1;
 
 	public int enemyPerWave = 5;
 	[ReadOnly] public int enemiesToSpawn;
@@ -73,7 +73,7 @@ public class Spawner : MonoBehaviour
 		{
 			enemiesToSpawn--;
 			var enemy = Instantiate(type, gameObject.transform);
-			enemy.name = "Enemy " + enemyCount++;
+			enemy.name = "Enemy LVL " + (nextType + 1) + ": " + enemyCount++;
 			var enemyController = enemy.GetComponent<EnemyController>();
 			enemyController.mineObject = gameObject;
 			enemyController.baseObject = mainBase;
