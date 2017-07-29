@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
-		
+		// rotate randomly
+		transform.rotation = Quaternion.Euler(90f, Random.value * 90f, 0f);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	public void Explode()
 	{
 		Destroy(gameObject);
