@@ -856,7 +856,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1304456116}
   - component: {fileID: 1304456119}
-  - component: {fileID: 1304456118}
   - component: {fileID: 1304456117}
   m_Layer: 0
   m_Name: Background
@@ -912,21 +911,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1304456118
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64145868126897030, guid: 09735ba0daade4b9da3f99fc37fd4a8f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1304456115}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1304456119
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -41,4 +41,13 @@ public class EnemyController : MonoBehaviour
         agent.ResetPath();
         agent.SetDestination(lastTarget.transform.position);
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        var rocket = other.gameObject.GetComponent<RocketController>();
+        if (rocket)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
