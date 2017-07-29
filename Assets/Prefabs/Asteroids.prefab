@@ -34,8 +34,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1185976272376436}
-  m_LocalRotation: {x: -0.40821788, y: 0.23456968, z: -0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: -1.1465749, z: 1.3664349}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.9459385, y: 0.89187706, z: 1.8378152}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,8 +58,8 @@ MonoBehaviour:
   - {fileID: 1100739322972980, guid: eb3fa33c3aeec47efac5a988908565e8, type: 2}
   poolWeight:
   - 1
-  - 0.303
-  - 0.009
+  - 0.415
+  - 0.161
   amount: 3000
   bounds: {x: 50, y: 0, z: 50}
   distributionMap: {fileID: 2800000, guid: b715f511f893f4a1b8040de05cc54f7a, type: 3}
@@ -81,7 +81,7 @@ MonoBehaviour:
   scaleChannel: 2
   scaleMax: 1
   scaleMin: 0.25
-  rotationType: 1
+  rotationType: 0
   rotationDeltaX: 0
   rotationDeltaY: 180
   rotationDeltaZ: 0
