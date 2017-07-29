@@ -6,7 +6,7 @@ public class Asteroid : MonoBehaviour {
 
 	void Start () {
 		// rotate randomly
-		transform.rotation = Quaternion.Euler(90f, Random.value * 90f, 0f);
+		transform.rotation = Quaternion.Euler(0f, Random.value * 90f, 0f);
 	}
 	
 	public void Explode()
