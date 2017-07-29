@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour {
+public class CameraController : MonoBehaviour
+{
+	public GameObject player;
+	public float height = 8;
 
-	// Use this for initialization
-	void Start () {
-		Debug.Log("Hello World!");
-	}
-	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+	{
+		var playerPos = player.transform.position;
+		transform.position = new Vector3(playerPos.x, playerPos.y + height, playerPos.z);
 	}
 }
