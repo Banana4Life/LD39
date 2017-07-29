@@ -11,7 +11,7 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: 
+  - name: Destructable
     cost: 1
   - name: 
     cost: 1
@@ -74,7 +74,7 @@ NavMeshProjectSettings:
   - serializedVersion: 2
     agentTypeID: 0
     agentRadius: 0.5
-    agentHeight: 2
+    agentHeight: 0.001
     agentSlope: 45
     agentClimb: 0.75
     ledgeDropHeight: 0
@@ -86,4 +86,4 @@ NavMeshProjectSettings:
     tileSize: 256
     accuratePlacement: 0
   m_SettingNames:
-  - Humanoid
+  - Ship
