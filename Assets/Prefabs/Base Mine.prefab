@@ -94,13 +94,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainBase: {fileID: 0}
-  entities: []
   types:
   - {fileID: 1801759079588420, guid: 1b2496d4eb3ce4d40a2207823046d4a6, type: 2}
   - {fileID: 1307436241746088, guid: 949a44be5a9e241f18c819e0a5ef4f1a, type: 2}
+  nextType: 0
   timeToSpawn: 0
-  interval: 3
-  enemyPerWave: 5
+  interval: 2
+  enemyCount: 0
+  enemyPerWave: 15
+  enemiesToSpawn: 0
   dead: 0
 --- !u!136 &136943091970096314
 CapsuleCollider:

@@ -306,7 +306,7 @@ public class RandomDistributionScript : MonoBehaviour {
 		//reset seed
 		Random.seed = (int)System.DateTime.Now.Ticks;
 
-		var map = transform.parent.GetComponent<MapScript>();
+		var map = GameObject.Find("Map").GetComponent<MapScript>();
 		map.UpdateMesh();
 	}
 	

@@ -93,7 +93,10 @@ public class Spawner : MonoBehaviour
 
 	public void UpgradeDefences()
 	{
-		nextType++;
+		if (types.Count > nextType)
+		{
+			nextType++;
+		}
 		enemiesToSpawn = enemyPerWave;
 	}
 }
