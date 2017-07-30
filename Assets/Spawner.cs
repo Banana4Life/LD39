@@ -85,12 +85,12 @@ public class Spawner : MonoBehaviour
 
 	private GameObject doSpawnEnemy(GameObject type)
 	{
-		var enemy = Instantiate(type, gameObject.transform.position + Vector3.right, Quaternion.identity, gameObject.transform);
+		var enemy = Instantiate(type, gameObject.transform.position, Quaternion.identity, gameObject.transform);
 		enemy.name = "Enemy LVL " + (nextType + 1) + ": " + enemyCount++;
 		var enemyController = enemy.GetComponent<EnemyController>();
 		enemyController.mineObject = gameObject;
 		enemyController.baseObject = mainBase;
-		enemyController.active = true;
+		enemyController.active = false;
 		return enemy;
 	}
 

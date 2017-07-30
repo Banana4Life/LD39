@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {    
         var agent = GetComponent<NavMeshAgent>();
         //var dist = Mathf.CeilToInt(lastTarget.GetComponent<Collider>().bounds.size.y / 2); 
         if (restart)

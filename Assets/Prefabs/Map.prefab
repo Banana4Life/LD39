@@ -28,22 +28,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1261782063728936
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4797123513386388}
-  - component: {fileID: 114563437628004444}
-  m_Layer: 0
-  m_Name: Clouds
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1659316757573378
 GameObject:
   m_ObjectHideFlags: 0
@@ -53,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4506906908258722}
   - component: {fileID: 33093875786092300}
-  - component: {fileID: 64145868126897030}
   - component: {fileID: 23349805248613368}
   m_Layer: 0
   m_Name: Background
@@ -73,7 +56,6 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
   - {fileID: 4506906908258722}
-  - {fileID: 4797123513386388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -89,19 +71,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4071225148755384}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4797123513386388
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1261782063728936}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4071225148755384}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23349805248613368
 MeshRenderer:
@@ -142,20 +111,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659316757573378}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64145868126897030
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659316757573378}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &114294564001880704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,20 +138,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 0}
---- !u!114 &114563437628004444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1261782063728936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66542cacd4b524b6ea51291a98102b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloudMap: {fileID: 2800000, guid: 40b74c5b318304609a5ba44e7cb74912, type: 3}
-  cloud: {fileID: 1385795976155268, guid: 10fa70357cb9d4b16813c8d7c23f86a3, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: ccb0db559400444a1b88302b22e072be, type: 2}
 --- !u!114 &114627430852140160
 MonoBehaviour:
   m_ObjectHideFlags: 1
