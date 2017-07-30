@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 
+[RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour
 {
 	public GameObject player;
 	private PostProcessingBehaviour postProcessingBehaviour;
+	private Camera cam;
 
 	private void Start()
 	{
 		postProcessingBehaviour = GetComponent<PostProcessingBehaviour>();
 		postProcessingBehaviour.enabled = true;
+		cam = GetComponent<Camera>();
 	}
 
 	void Update ()
