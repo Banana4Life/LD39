@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon1 : MonoBehaviour {
+public class Projectile : MonoBehaviour {
 
 	public ParticleSystem part;
 	public List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
