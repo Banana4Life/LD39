@@ -4,16 +4,16 @@ public class Destroyable : MonoBehaviour
 {
     public int life = 25;
 
-    public void Hit(int amount)
+    public virtual void Hit(int amount)
     {
         life--;
         if (life == 0)
         {
-            Explode();
+            Destroy();
         }
     }
 	
-    public void Explode()
+    public virtual void Destroy()
     {
         Debug.Log(GetType().Name + " exploded");
         Destroy(gameObject);

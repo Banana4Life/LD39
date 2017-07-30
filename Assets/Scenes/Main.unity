@@ -596,23 +596,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114908009167084656, guid: 569dae68a11a34844ab099dec679633e,
+    - target: {fileID: 23732513229534860, guid: 569dae68a11a34844ab099dec679633e,
         type: 2}
-      propertyPath: range
-      value: 5
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114449530493812328, guid: 569dae68a11a34844ab099dec679633e,
+    - target: {fileID: 136841480560093290, guid: 569dae68a11a34844ab099dec679633e,
         type: 2}
-      propertyPath: range
-      value: 5
+      propertyPath: m_Radius
+      value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 1077471367564550, guid: 569dae68a11a34844ab099dec679633e, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1661889208257700, guid: 569dae68a11a34844ab099dec679633e, type: 2}
-      propertyPath: m_Layer
-      value: 10
+    - target: {fileID: 114599112393916522, guid: 569dae68a11a34844ab099dec679633e,
+        type: 2}
+      propertyPath: shieldThickness
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 569dae68a11a34844ab099dec679633e, type: 2}
@@ -1175,7 +1172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1304456116
 Transform:
   m_ObjectHideFlags: 0

@@ -58,7 +58,7 @@ public class EnemyController : Destroyable
                     RaycastHit sphereHit;
                     if (Physics.SphereCast(pos, 1, transform.up, out sphereHit, 1, asteroidLayer))
                     {
-                        sphereHit.collider.gameObject.GetComponent<Asteroid>().Explode();
+                        sphereHit.collider.gameObject.GetComponent<Asteroid>().Destroy();
                         if (activeNavPlane)
                         {
                             activeNavPlane.build = true;
