@@ -27,6 +27,7 @@ public class ReadOnlyDrawer : PropertyDrawer
 public class Spawner : MonoBehaviour
 {
 	public GameObject mainBase;
+	public GameObject miningBase;
 	public List<GameObject> types;
 
 	[ReadOnly] public Queue<GameObject> entities = new Queue<GameObject>();
@@ -66,7 +67,7 @@ public class Spawner : MonoBehaviour
 
 	public void SpawnEnemy(GameObject type)
 	{
-		var spawners = gameObject.transform.parent.GetComponentsInChildren<Spawner>();
+		var spawners = gameObject.GetComponentsInChildren<Spawner>();
 
 		if (entities.Count > 0)
 		{
@@ -89,9 +90,11 @@ public class Spawner : MonoBehaviour
 		}
 	}
 
-	private GameObject doSpawnEnemy(GameObject type)
+	private GameObject doSpawnEnemy(GameObject type, GameObject at)
 	{
-		var enemy = Instantiate(type, gameObject.transform.position, Quaternion.identity, gameObject.transform);
+		var spawnPos = gameObject.transform.position;
+		spawnPos.y = 0;
+		var enemy = Instantiate(type, spawnPos, Quaternion.identity, gameObject.transform);
 		enemy.name = "Enemy LVL " + (nextType + 1) + ": " + enemyCount++;
 		var enemyController = enemy.GetComponent<EnemyController>();
 		enemyController.mineObject = gameObject;
@@ -119,7 +122,7 @@ public class Spawner : MonoBehaviour
 		entities.Clear();
 		for (var j = 0; j < enemyPerWave + oldCount; j++)
 		{
-			var spawned = doSpawnEnemy(types[nextType]);
+			var spawned = doSpawnEnemy(types[nextType], miningBase);
 			
 			entities.Enqueue(spawned);
 		}

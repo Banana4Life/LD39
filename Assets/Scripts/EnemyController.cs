@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Destroyable
 {
     public GameObject mineObject;
     public GameObject baseObject;
@@ -26,17 +26,19 @@ public class EnemyController : MonoBehaviour
         {
             agent.SetDestination(gameObject.transform.position);
         }
-        //var dist = Mathf.CeilToInt(lastTarget.GetComponent<Collider>().bounds.size.y / 2); 
-        if (restart)
+        else 
         {
-            flipTarget(agent);
-            restart = false;
+            if (restart)
+            {
+                flipTarget(agent);
+                restart = false;
+            }
+            else if (DidAgentReachDestination(agent)) //Arrived.
+            {
+                flipTarget(agent);
+            }            
+            RemoveBlockingAsteroids();
         }
-        else if (DidAgentReachDestination(agent)) //Arrived.
-        {
-            flipTarget(agent);
-        }
-        RemoveBlockingAsteroids();
     }
 
     private void RemoveBlockingAsteroids()
