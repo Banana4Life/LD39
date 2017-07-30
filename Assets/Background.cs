@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-	public Material background;
 	public Material debugBackground;
 
 	public bool debug;
@@ -12,6 +11,9 @@ public class Background : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		GetComponent<MeshRenderer>().material = debug ? debugBackground : background;
+		if (debug)
+		{
+			GetComponent<MeshRenderer>().material = debugBackground;
+		}
 	}
 }

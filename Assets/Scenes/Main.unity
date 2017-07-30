@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -456,6 +456,7 @@ Transform:
   - {fileID: 364315785}
   - {fileID: 874511335}
   - {fileID: 1232050667}
+  - {fileID: 1603013903}
   - {fileID: 968338217}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -669,7 +670,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4183390595907452, guid: 10fa70357cb9d4b16813c8d7c23f86a3,
     type: 2}
   m_PrefabInternal: {fileID: 1075194309}
-
 --- !u!1 &701404853 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1699008811163778, guid: ed39fa279ac0141aeac1975db62c9afe,
@@ -1312,8 +1312,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 515a60b4336834a9eaf1f40d113b655a, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1343,7 +1342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc478ff44fb06491ca125516283c1f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 2100000, guid: 4c85c8db87159420fa8cad0f3da5fee4, type: 2}
   debugBackground: {fileID: 2100000, guid: 124cd20812a3a4a3dadc76da26b908c0, type: 2}
   debug: 0
 --- !u!33 &1304456119
@@ -4707,6 +4705,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4714781964729086, guid: 03f8f120871544b639deb499a79d0e22,
     type: 2}
   m_PrefabInternal: {fileID: 498030022}
+--- !u!4 &1603013903 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4579114336260620, guid: 797fe911c8240468198303730fa0ed0d,
+    type: 2}
+  m_PrefabInternal: {fileID: 542238853}
 --- !u!4 &1694551775 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4545266511330496, guid: fe81de91b227945edb10a4b5df1e9314,
