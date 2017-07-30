@@ -17,7 +17,8 @@ public class Weapon1 : MonoBehaviour {
 		Asteroid asteroid = other.GetComponent<Asteroid>();
 		if (asteroid != null)
 		{
-			asteroid.Hit();
+			int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
+			asteroid.Hit(numCollisionEvents);
 		}
 	}
 }

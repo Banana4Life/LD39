@@ -147,8 +147,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 65913768393088710, guid: baa5decf148124d60a4800bee0d213b9, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: baa5decf148124d60a4800bee0d213b9, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &206782947 stripped
@@ -599,24 +598,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b3c1c251e5b546089f513221f01316f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &824349377 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1949748232477746, guid: baa5decf148124d60a4800bee0d213b9,
-    type: 2}
-  m_PrefabInternal: {fileID: 36121906}
---- !u!136 &824349378
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 824349377}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: -0.03, y: 0, z: 0}
 --- !u!1 &837231385 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1816780206614690, guid: d063ceecd54524a5fa5a24bd51500318,
@@ -743,13 +724,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
         type: 2}
-      propertyPath: CollisionModule.m_Dampen.scalar
-      value: 0.05
+      propertyPath: randomSeed
+      value: 2034463199
       objectReference: {fileID: 0}
     - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
         type: 2}
-      propertyPath: randomSeed
-      value: 642524814
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 0.9855223
+      objectReference: {fileID: 0}
+    - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.09954834
+      objectReference: {fileID: 0}
+    - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].time
+      value: 0.021110535
+      objectReference: {fileID: 0}
+    - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 0.43501282
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}

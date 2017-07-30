@@ -11,7 +11,7 @@ public class Asteroid : MonoBehaviour
 		transform.rotation = Quaternion.Euler(0f, Random.value * 90f, 0f);
 	}
 
-	public void Hit()
+	public void Hit(int amount)
 	{
 		life--;
 		if (life == 0)
@@ -23,7 +23,7 @@ public class Asteroid : MonoBehaviour
 	public void Explode()
 	{
 		Debug.Log("Asteroid exploded");
-		Destroy(gameObject, 1f);
+		Destroy(gameObject);
 		// TODO spawn particles and stuff
 	}
 }
