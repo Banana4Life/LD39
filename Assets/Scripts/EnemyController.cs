@@ -103,6 +103,9 @@ public class EnemyController : Destroyable
     public override void Destroy()
     {
         base.Destroy();
-        GetComponent<ParticleSystem>().Play();
+        foreach (var ps in GetComponentsInChildren<ParticleSystem>())
+        {
+            ps.Play();
+        }
     }
 }
