@@ -19,6 +19,10 @@ public class EnemyController : MonoBehaviour
     void Update()
     {    
         var agent = GetComponent<NavMeshAgent>();
+        if (!active)
+        {
+            agent.SetDestination(gameObject.transform.position);
+        }
         //var dist = Mathf.CeilToInt(lastTarget.GetComponent<Collider>().bounds.size.y / 2); 
         if (restart)
         {

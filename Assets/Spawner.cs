@@ -69,7 +69,7 @@ public class Spawner : MonoBehaviour
 
 		if (entities.Count > 0)
 		{
-			entities.Dequeue().SetActive(true);
+			entities.Dequeue().GetComponent<EnemyController>().active = true;
 		}
 		else if (gameObject.transform.childCount == 0)
 		{
@@ -111,7 +111,6 @@ public class Spawner : MonoBehaviour
 			var spawned = doSpawnEnemy(types[0]);
 			
 			entities.Enqueue(spawned);
-			spawned.SetActive(false);
 		}
 	}
 }
