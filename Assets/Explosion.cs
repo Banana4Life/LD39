@@ -12,12 +12,13 @@ public class Explosion : MonoBehaviour
         var ps = gameObject.GetComponent<ParticleSystem>();
         ps.Play();
         gameObject.transform.parent = null; // Detach from parent to keep playing
+        exploded = true;
     }
 
     void Update()
     {
         var ps = gameObject.GetComponent<ParticleSystem>();
-        if (exploded && !ps.isPlaying)
+        if (exploded && !ps.IsAlive())
         {
             Destroy(gameObject); // Destroy when emmiter is done
         }

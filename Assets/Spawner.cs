@@ -85,7 +85,6 @@ public class Spawner : MonoBehaviour
 		}
 		else if (container.transform.childCount == 0)
 		{
-			Debug.Log("Empty Lane! Upgrading Defences...");
 			dead = true;
 			var spawners = gameObject.GetComponentsInChildren<Spawner>();
 			foreach (var spawner in spawners)
