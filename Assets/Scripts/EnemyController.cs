@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
 
     public GameObject lastTarget;
 
-    private Plane activeNavPlane;
+    public Plane activeNavPlane;
 
     public bool restart;
 

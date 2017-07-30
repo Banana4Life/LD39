@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4508521036148846}
   - component: {fileID: 212727658321853526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Transportship-medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 54291064658320014}
   - component: {fileID: 114043465945690614}
   - component: {fileID: 195108191028919098}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

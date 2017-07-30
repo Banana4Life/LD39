@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4579114336260620}
   - component: {fileID: 33860504434886956}
   - component: {fileID: 136645887006243046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4983017079997676}
   - component: {fileID: 212153441065606424}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Endboss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
