@@ -469,6 +469,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4017738426327116, guid: 569dae68a11a34844ab099dec679633e,
     type: 2}
   m_PrefabInternal: {fileID: 187647778}
+--- !u!1 &365570622 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1034371338244252, guid: 797fe911c8240468198303730fa0ed0d,
+    type: 2}
+  m_PrefabInternal: {fileID: 542238853}
 --- !u!4 &367001702 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4039422338453596, guid: c526416639bd8407e9ad43214a3cf5ff,
@@ -1186,7 +1191,7 @@ Prefab:
         type: 2}
       propertyPath: mainBase
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 365570622}
     - target: {fileID: 114191990326452016, guid: 660bbb19b397449b8945e57516abb11d,
         type: 2}
       propertyPath: miningBase
@@ -1196,7 +1201,7 @@ Prefab:
         type: 2}
       propertyPath: mainBase
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 365570622}
     - target: {fileID: 114162227621422398, guid: 660bbb19b397449b8945e57516abb11d,
         type: 2}
       propertyPath: miningBase
@@ -1206,7 +1211,7 @@ Prefab:
         type: 2}
       propertyPath: mainBase
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 365570622}
     - target: {fileID: 114723316209475290, guid: 660bbb19b397449b8945e57516abb11d,
         type: 2}
       propertyPath: miningBase
