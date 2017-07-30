@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
 	public GameObject mainBase;
 	public List<GameObject> types;
 
-	private Queue<GameObject> entities = new Queue<GameObject>();
+	[ReadOnly] public Queue<GameObject> entities = new Queue<GameObject>();
 
 	[ReadOnly] public int nextType;
 	[ReadOnly] public float timeToSpawn;
@@ -74,6 +74,7 @@ public class Spawner : MonoBehaviour
 			if (next != null)
 			{
 				next.GetComponent<EnemyController>().active = true;
+				next.GetComponent<Rigidbody>().isKinematic = false;
 			}
 		}
 		else if (gameObject.transform.childCount == 0)
@@ -90,19 +91,23 @@ public class Spawner : MonoBehaviour
 
 	private GameObject doSpawnEnemy(GameObject type)
 	{
-		var enemy = Instantiate(type, gameObject.transform.position, Quaternion.identity);
-		enemy.transform.parent = gameObject.transform;
+		var enemy = Instantiate(type, gameObject.transform.position, Quaternion.identity, gameObject.transform);
 		enemy.name = "Enemy LVL " + (nextType + 1) + ": " + enemyCount++;
 		var enemyController = enemy.GetComponent<EnemyController>();
 		enemyController.mineObject = gameObject;
 		enemyController.baseObject = mainBase;
 		enemyController.active = false;
+		enemy.GetComponent<Rigidbody>().isKinematic = true;
 		return enemy;
 	}
 
 	public void UpgradeDefences()
 	{
-		if (types.Count > nextType)
+		if (dead)
+		{
+			return;
+		}
+		if (types.Count >= nextType)
 		{
 			nextType++;
 		}

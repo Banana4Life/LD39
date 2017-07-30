@@ -461,10 +461,6 @@ Prefab:
       propertyPath: m_Name
       value: Base Mine SE
       objectReference: {fileID: 0}
-    - target: {fileID: 4013960273619374, guid: d063ceecd54524a5fa5a24bd51500318, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d063ceecd54524a5fa5a24bd51500318, type: 2}
   m_IsPrefabParent: 0
