@@ -12,6 +12,8 @@ public class EnemyController : MonoBehaviour
 
     public GameObject lastTarget;
 
+    private Plane activeNavPlane;
+
     public bool restart;
 
     public bool active = false;
@@ -42,25 +44,24 @@ public class EnemyController : MonoBehaviour
         const int asteroidArea = 1 << 3;
         const int asteroidLayer = 1 << 8;
         NavMeshHit navMeshHit;
-        if (NavMesh.SamplePosition(new Vector3(transform.position.x, 0, transform.position.z), out navMeshHit, 1, asteroidArea))
+        if (NavMesh.SamplePosition(new Vector3(transform.position.x, 0, transform.position.z), out navMeshHit, 1, -1))
         {
-//            Debug.LogWarning("Is in Asteroid Area");
-            var rb = GetComponent<Rigidbody>();
-            if (rb.velocity.sqrMagnitude > 0)
+            if ((navMeshHit.mask & asteroidArea) == asteroidArea)
             {
-//                Debug.LogWarning("Is moving");
-                var pos = transform.position;
-                pos.y = 1;
-                RaycastHit sphereHit;
-                if (Physics.SphereCast(pos, 1f, transform.forward, out sphereHit, 5, asteroidLayer))
+                var rb = GetComponent<Rigidbody>();
+                if (rb.velocity.sqrMagnitude > 0)
                 {
-//                    Debug.LogWarning("Has asteroid near by");
-                    Destroy(sphereHit.collider.gameObject);
-                    GameObject.Find("Map").GetComponent<MapScript>().UpdateAllNavMeshes();
-                }
-                else
-                {
-//                    Debug.LogWarning("No asteroid!!!!");
+                    var pos = transform.position;
+                    pos.y = 1;
+                    RaycastHit sphereHit;
+                    if (Physics.SphereCast(pos, 1, transform.up, out sphereHit, 1, asteroidLayer))
+                    {
+                        Destroy(sphereHit.collider.gameObject);
+                        if (activeNavPlane)
+                        {
+                            activeNavPlane.build = true;
+                        }
+                    }
                 }
             }
         }
@@ -85,6 +86,15 @@ public class EnemyController : MonoBehaviour
         if (rocket)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var plane = other.gameObject.GetComponent<Plane>();
+        if (plane)
+        {
+            activeNavPlane = plane;
         }
     }
 }
