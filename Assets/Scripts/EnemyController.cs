@@ -102,10 +102,12 @@ public class EnemyController : Destroyable
 
     public override void Destroy()
     {
-        base.Destroy();
-        foreach (var ps in GetComponentsInChildren<ParticleSystem>())
+        
+        foreach (var ps in GetComponentsInChildren<Explosion>())
         {
-            ps.Play();
+            ps.explode();
         }
+        
+        base.Destroy();
     }
 }
