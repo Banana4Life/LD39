@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		nextType = 0;
+		nextType = -1;
 		timeToSpawn = interval;
 		dead = false;
 		UpgradeDefences();
