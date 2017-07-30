@@ -367,12 +367,12 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 1254077181591120, guid: 569dae68a11a34844ab099dec679633e,
     type: 2}
-  m_PrefabInternal: {fileID: 638181974}
+  m_PrefabInternal: {fileID: 742798188}
 --- !u!4 &364315785 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4017738426327116, guid: 569dae68a11a34844ab099dec679633e,
     type: 2}
-  m_PrefabInternal: {fileID: 638181974}
+  m_PrefabInternal: {fileID: 742798188}
 --- !u!4 &367001702 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4039422338453596, guid: c526416639bd8407e9ad43214a3cf5ff,
@@ -552,7 +552,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 797fe911c8240468198303730fa0ed0d, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &638181974
+--- !u!1 &701404853 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1699008811163778, guid: ed39fa279ac0141aeac1975db62c9afe,
+    type: 2}
+  m_PrefabInternal: {fileID: 874511334}
+--- !u!1001 &742798188
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -591,48 +596,27 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114908009167084656, guid: 569dae68a11a34844ab099dec679633e,
+        type: 2}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449530493812328, guid: 569dae68a11a34844ab099dec679633e,
+        type: 2}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077471367564550, guid: 569dae68a11a34844ab099dec679633e, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661889208257700, guid: 569dae68a11a34844ab099dec679633e, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 569dae68a11a34844ab099dec679633e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &638181975 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1661889208257700, guid: 569dae68a11a34844ab099dec679633e,
-    type: 2}
-  m_PrefabInternal: {fileID: 638181974}
---- !u!1 &638181976 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1077471367564550, guid: 569dae68a11a34844ab099dec679633e,
-    type: 2}
-  m_PrefabInternal: {fileID: 638181974}
---- !u!114 &638181977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 638181975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9714401133b44d18660ea1e8f67ca7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 25
---- !u!114 &638181978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 638181976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9714401133b44d18660ea1e8f67ca7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 25
---- !u!1 &701404853 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1699008811163778, guid: ed39fa279ac0141aeac1975db62c9afe,
-    type: 2}
-  m_PrefabInternal: {fileID: 874511334}
 --- !u!1 &748976809
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +750,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 40.26
+      value: 64.9
       objectReference: {fileID: 0}
     - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_LocalPosition.y
@@ -774,7 +758,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 39.11
+      value: 20.5
       objectReference: {fileID: 0}
     - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_LocalRotation.x
