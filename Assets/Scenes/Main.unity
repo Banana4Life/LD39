@@ -322,16 +322,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114078949402420872, guid: c526416639bd8407e9ad43214a3cf5ff,
-        type: 2}
-      propertyPath: poolWeight.Array.data[1]
-      value: 0.555
-      objectReference: {fileID: 0}
-    - target: {fileID: 114078949402420872, guid: c526416639bd8407e9ad43214a3cf5ff,
-        type: 2}
-      propertyPath: amount
-      value: 2000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c526416639bd8407e9ad43214a3cf5ff, type: 2}
   m_IsPrefabParent: 0

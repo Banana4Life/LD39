@@ -31,10 +31,10 @@ public class Spawner : MonoBehaviour
 
 	private Queue<GameObject> entities = new Queue<GameObject>();
 
-	[ReadOnly] public int nextType = -1;
+	[ReadOnly] public int nextType;
 	[ReadOnly] public float timeToSpawn;
 	public float interval = 3;
-	[ReadOnly] public int enemyCount = 1;
+	[ReadOnly] public int enemyCount;
 
 	public int enemyPerWave = 5;
 
@@ -46,6 +46,7 @@ public class Spawner : MonoBehaviour
 		nextType = -1;
 		timeToSpawn = interval;
 		dead = false;
+		enemyCount = 0;
 		UpgradeDefences();
 	}
 	
@@ -69,7 +70,11 @@ public class Spawner : MonoBehaviour
 
 		if (entities.Count > 0)
 		{
-			entities.Dequeue().GetComponent<EnemyController>().active = true;
+			var next = entities.Dequeue();
+			if (next != null)
+			{
+				next.GetComponent<EnemyController>().active = true;
+			}
 		}
 		else if (gameObject.transform.childCount == 0)
 		{
@@ -109,7 +114,7 @@ public class Spawner : MonoBehaviour
 		entities.Clear();
 		for (var j = 0; j < enemyPerWave + oldCount; j++)
 		{
-			var spawned = doSpawnEnemy(types[0]);
+			var spawned = doSpawnEnemy(types[nextType]);
 			
 			entities.Enqueue(spawned);
 		}
