@@ -14,11 +14,11 @@ public class Weapon1 : MonoBehaviour {
 
 	void OnParticleCollision(GameObject other)
 	{
-		Asteroid asteroid = other.GetComponent<Asteroid>();
-		if (asteroid != null)
+		Destroyable destroyable = other.GetComponent<Destroyable>();
+		if (destroyable != null)
 		{
 			int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
-			asteroid.Hit(numCollisionEvents);
+			destroyable.Hit(numCollisionEvents);
 		}
 	}
 }

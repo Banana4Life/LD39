@@ -92,12 +92,12 @@ public class Spawner : MonoBehaviour
 
 	private GameObject doSpawnEnemy(GameObject type, GameObject at)
 	{
-		var spawnPos = gameObject.transform.position;
+		var spawnPos = at.transform.position;
 		spawnPos.y = 0;
 		var enemy = Instantiate(type, spawnPos, Quaternion.identity, gameObject.transform);
 		enemy.name = "Enemy LVL " + (nextType + 1) + ": " + enemyCount++;
 		var enemyController = enemy.GetComponent<EnemyController>();
-		enemyController.mineObject = gameObject;
+		enemyController.mineObject = miningBase;
 		enemyController.baseObject = mainBase;
 		enemyController.active = false;
 		enemy.GetComponent<Rigidbody>().isKinematic = true;
