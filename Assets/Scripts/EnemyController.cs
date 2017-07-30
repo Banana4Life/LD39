@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour
                 {
 //                    Debug.LogWarning("Has asteroid near by");
                     Destroy(sphereHit.collider.gameObject);
-                    GameObject.Find("Map").GetComponent<MapScript>().UpdateMesh();
+                    GameObject.Find("Map").GetComponent<MapScript>().UpdateAllNavMeshes();
                 }
                 else
                 {

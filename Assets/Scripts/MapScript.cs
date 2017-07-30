@@ -8,19 +8,41 @@ public class MapScript : MonoBehaviour
 {
 	public bool updateMesh;
 
+	public GameObject backgroundMap;
+	public GameObject plane;
+	public int distance;
+	public int size;
+
+	private void Start()
+	{
+		for (int x = 0; x < size; x++)
+		{
+			for (int z = 0; z < size; z++)
+			{
+				var planeInstance = Instantiate(plane, new Vector3(x*distance, 0, z*distance), Quaternion.identity, gameObject.transform);
+				planeInstance.name = "Plane " + x + ":" + z;
+			}
+				
+		}
+		UpdateAllNavMeshes();
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
 		if (updateMesh)
 		{
-			UpdateMesh();
+			UpdateAllNavMeshes();
 			updateMesh = false;
 		}
 	}
 
-	public void UpdateMesh()
+	public void UpdateAllNavMeshes()
 	{
-		var navMeshSurface = GetComponent<NavMeshSurface>();
-		navMeshSurface.BuildNavMesh();
+		var navMeshSurface = GetComponentsInChildren<Plane>();
+		foreach (var meshSurface in navMeshSurface)
+		{
+			meshSurface.UpdateNavMesh();
+		}
 	}
 }

@@ -307,7 +307,7 @@ public class RandomDistributionScript : MonoBehaviour {
 		Random.seed = (int)System.DateTime.Now.Ticks;
 
 		var map = GameObject.Find("Map").GetComponent<MapScript>();
-		map.UpdateMesh();
+		map.UpdateAllNavMeshes();
 	}
 	
 	private Vector2 FindMapPosition(Vector3 pos)
