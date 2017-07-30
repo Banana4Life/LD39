@@ -8,34 +8,12 @@ public class Shield : Destroyable
 
 	public bool shielded;
 
-	public float shieldThickness = 0.2f;
-
-	public float unshielded;
-
-	private CapsuleCollider cc;
-
 	// Use this for initialization
 	void Start ()
 	{
-		cc = gameObject.GetComponent<CapsuleCollider>();
-		unshielded = cc.radius;
-		cc.radius = 0.1f + cc.radius;
 		unhit();
 	}
 	
-	// Update is called once per frame
-	void Update ()
-	{
-		if (shielded)
-		{
-			cc.radius = unshielded + shieldThickness;
-		}
-		else
-		{
-			cc.radius = unshielded;
-		}
-	}
-
 	public override void Hit(int amount)
 	{
 		base.Hit(amount);
@@ -55,6 +33,12 @@ public class Shield : Destroyable
 	{
 		Debug.Log(GetType().Name + " Shield deactivated");
 		shielded = false;
+		GetComponent<Collider>().enabled = false;
+		var particle = gameObject.GetComponentInChildren<ParticleSystem>();
+		if (particle != null)
+		{
+			particle.Play();
+		}
 	}
 	
 	
