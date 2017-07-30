@@ -52,9 +52,9 @@ public class Spawner : MonoBehaviour
 		timeToSpawn = interval;
 		dead = false;
 		enemyCount = 0;
-		UpgradeDefences();
 		container = new GameObject("Container " + spawnerCount++);
 		container.transform.parent = gameObject.transform;
+		UpgradeDefences();
 	}
 	
 	// Update is called once per frame
@@ -73,8 +73,6 @@ public class Spawner : MonoBehaviour
 
 	public void SpawnEnemy(GameObject type)
 	{
-		var spawners = gameObject.GetComponentsInChildren<Spawner>();
-
 		if (entities.Count > 0)
 		{
 			var next = entities.Dequeue();
@@ -84,11 +82,11 @@ public class Spawner : MonoBehaviour
 				next.GetComponent<Rigidbody>().isKinematic = false;
 			}
 		}
-		else if (gameObject.transform.childCount == 0)
+		else if (container.transform.childCount == 0)
 		{
 			Debug.Log("Empty Lane! Upgrading Defences...");
 			dead = true;
-			
+			var spawners = gameObject.GetComponentsInChildren<Spawner>();
 			foreach (var spawner in spawners)
 			{
 				spawner.UpgradeDefences();
@@ -116,17 +114,12 @@ public class Spawner : MonoBehaviour
 		{
 			return;
 		}
-		if (types.Count >= nextType)
+		nextType++;
+		if (types.Count > nextType - 1)
 		{
-			nextType++;
+			nextType--;
 		}
-		var oldCount = entities.Count;
-		foreach (var entity in entities)
-		{
-			Destroy(entity);
-		}
-		entities.Clear();
-		for (var j = 0; j < enemyPerWave + oldCount; j++)
+		for (var j = 0; j < enemyPerWave; j++)
 		{
 			var spawned = doSpawnEnemy(types[nextType], miningBase);
 			
