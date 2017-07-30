@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 120
+  explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
 --- !u!114 &114599112393916522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -555,6 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 250
+  explosion: {fileID: 0}
   shielded: 1
 --- !u!114 &114630863762588722
 MonoBehaviour:
@@ -568,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 754
+  explosion: {fileID: 0}
 --- !u!114 &114887045345607076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -580,6 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 180
+  explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
 --- !u!114 &114913356782034780
 MonoBehaviour:
   m_ObjectHideFlags: 1
