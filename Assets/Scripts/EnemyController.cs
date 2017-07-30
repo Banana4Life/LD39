@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour
                     RaycastHit sphereHit;
                     if (Physics.SphereCast(pos, 1, transform.up, out sphereHit, 1, asteroidLayer))
                     {
-                        Destroy(sphereHit.collider.gameObject);
+                        sphereHit.collider.gameObject.GetComponent<Asteroid>().Explode();
                         if (activeNavPlane)
                         {
                             activeNavPlane.build = true;
