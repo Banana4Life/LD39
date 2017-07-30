@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -38,7 +39,7 @@ public class PlayerController : Destroyable
 
 	private void checkIfInClouds()
 	{
-		InClouds = cloudsGenerator.HasClouds(transform.position);
+		//InClouds = false;
 	}
 
 	private void doFire()
@@ -117,5 +118,17 @@ public class PlayerController : Destroyable
 	public override void Destroy()
 	{
 		// TODO game over
+	}
+	
+	void OnParticleTrigger()
+	{
+		CancelInvoke(nameof(OutOfClouds));
+		Invoke(nameof(OutOfClouds), .2f);
+		InClouds = true;
+	}
+
+	public void OutOfClouds()
+	{
+		InClouds = false;
 	}
 }

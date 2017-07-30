@@ -14,6 +14,19 @@ public class CloudModifier : MonoBehaviour {
 	{
 		changeAlpha(other.gameObject, 1f);
 	}
+	
+
+	void OnParticleTrigger()
+	{
+		CancelInvoke(nameof(OutOfClouds));
+		Invoke(nameof(OutOfClouds), .2f);
+		GetComponentInParent<PlayerController>().InClouds = true;
+	}
+
+	public void OutOfClouds()
+	{
+		GetComponentInParent<PlayerController>().InClouds = false;
+	}
 
 	private static void changeAlpha(GameObject obj, float alpha)
 	{

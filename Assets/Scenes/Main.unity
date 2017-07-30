@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -880,9 +880,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198764482499865054, guid: 10fa70357cb9d4b16813c8d7c23f86a3,
+        type: 2}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 1094430559}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10fa70357cb9d4b16813c8d7c23f86a3, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1094430559 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4757710247171874, guid: 9a2963fa140cf4d689f1be3bf557f223,
+    type: 2}
+  m_PrefabInternal: {fileID: 1189439419}
 --- !u!1 &1129164555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1038,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136044988949605498, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: m_Radius
+      value: 2.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
