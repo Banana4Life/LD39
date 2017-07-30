@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114235210538774856}
   - component: {fileID: 114138954307433392}
   - component: {fileID: 54424819764503502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 0_Astroid Tiny
   m_TagString: Untagged
   m_Icon: {fileID: 0}

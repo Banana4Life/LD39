@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65772222157419408}
   - component: {fileID: 114806861710307600}
   - component: {fileID: 114217332234595302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 2_Astroid Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
