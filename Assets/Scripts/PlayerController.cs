@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 		doFire();
 
 		AutoPilot();
+		lookToMouse();
 	}
 
 	private void doFire()
@@ -75,5 +76,12 @@ public class PlayerController : MonoBehaviour
 		}
 		agent.ResetPath();
 		agent.SetDestination(list[walkTo].transform.position);
+	}
+
+	private void lookToMouse()
+	{
+		var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		point.y = transform.position.y;
+		transform.LookAt(point);
 	}
 }
