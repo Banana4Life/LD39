@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 54490463119856124}
   - component: {fileID: 195995647712538460}
   - component: {fileID: 136098201488826550}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PlayerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1953182205
+  randomSeed: -1516144354
   InitialModule:
     serializedVersion: 3
     enabled: 1
