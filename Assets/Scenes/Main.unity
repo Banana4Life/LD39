@@ -504,7 +504,6 @@ Transform:
   - {fileID: 364315785}
   - {fileID: 874511335}
   - {fileID: 1232050667}
-  - {fileID: 1603013903}
   - {fileID: 1527311194}
   - {fileID: 968338217}
   m_Father: {fileID: 0}
@@ -1062,6 +1061,7 @@ GameObject:
   - component: {fileID: 1190823860}
   - component: {fileID: 1190823859}
   - component: {fileID: 1190823864}
+  - component: {fileID: 1190823865}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1152,6 +1152,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1946407997}
+--- !u!114 &1190823865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190823858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 08bd64a3c70bc42f48db35da99977de4, type: 2}
 --- !u!1001 &1209699143
 Prefab:
   m_ObjectHideFlags: 0
@@ -1410,11 +1422,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4714781964729086, guid: 03f8f120871544b639deb499a79d0e22,
     type: 2}
   m_PrefabInternal: {fileID: 498030022}
---- !u!4 &1603013903 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4579114336260620, guid: 797fe911c8240468198303730fa0ed0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 542238853}
 --- !u!4 &1694551775 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4545266511330496, guid: fe81de91b227945edb10a4b5df1e9314,
