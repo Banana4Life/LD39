@@ -99,4 +99,10 @@ public class EnemyController : Destroyable
             activeNavPlane = plane;
         }
     }
+
+    public override void Destroy()
+    {
+        base.Destroy();
+        GetComponent<ParticleSystem>().Play();
+    }
 }
