@@ -991,7 +991,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 64.8
+      value: 69.07
       objectReference: {fileID: 0}
     - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_LocalPosition.y
@@ -999,7 +999,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 15
+      value: 18.55
       objectReference: {fileID: 0}
     - target: {fileID: 4743536355701552, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1021,29 +1021,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114430586079102700, guid: 9a2963fa140cf4d689f1be3bf557f223,
-        type: 2}
-      propertyPath: list.Array.data[0]
-      value: 
-      objectReference: {fileID: 364315781}
-    - target: {fileID: 114430586079102700, guid: 9a2963fa140cf4d689f1be3bf557f223,
-        type: 2}
-      propertyPath: list.Array.data[1]
-      value: 
-      objectReference: {fileID: 701404853}
-    - target: {fileID: 114430586079102700, guid: 9a2963fa140cf4d689f1be3bf557f223,
-        type: 2}
-      propertyPath: list.Array.data[2]
-      value: 
-      objectReference: {fileID: 837231385}
-    - target: {fileID: 114430586079102700, guid: 9a2963fa140cf4d689f1be3bf557f223,
-        type: 2}
-      propertyPath: list.Array.data[3]
-      value: 
-      objectReference: {fileID: 968338213}
     - target: {fileID: 1451608478974348, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 195995647712538460, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 23452871905016366, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
@@ -1110,7 +1100,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.5
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

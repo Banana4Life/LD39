@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Destroyable
 {
 	public bool InClouds;
 
@@ -46,14 +46,15 @@ public class PlayerController : MonoBehaviour
 		var left = Input.GetMouseButton(0);
 		var right = Input.GetMouseButton(1);
 		
-		var laser = gameObject.GetComponentInChildren<ParticleSystem>();
+		var laser = gameObject.GetComponentInChildren<Projectile>();
+		var ps = laser.gameObject.GetComponent<ParticleSystem>();
 		if (right)
 		{
-			laser.Play();
+			ps.Play();
 		}
 		else
 		{
-			laser.Stop();
+			ps.Stop();
 		}
 	}
 
@@ -93,11 +94,28 @@ public class PlayerController : MonoBehaviour
 		agent.SetDestination(list[walkTo].transform.position);
 	}
 
+	public override void Hit(int amount)
+	{
+		var shield = GetComponentInChildren<Shield>();
+		if (shield.shielded)
+		{
+			shield.Hit(amount);
+		}
+		else
+		{
+			base.Hit(amount);
+		}
+	}
+
 	private void lookToMouse()
 	{
 		var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		point.y = transform.position.y;
 		transform.LookAt(point);
 	}
-	
+
+	public override void Destroy()
+	{
+		// TODO game over
+	}
 }

@@ -15,9 +15,7 @@ public class Destroyable : MonoBehaviour
 	
     public virtual void Destroy()
     {
-        Debug.Log(GetType().Name + " exploded");
         Destroy(gameObject);
-        // TODO spawn particles and stuff
     }
     
 }
