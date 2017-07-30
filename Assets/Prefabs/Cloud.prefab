@@ -119,11 +119,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1385795976155268}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 5.5888963, z: 1}
+  m_Center: {x: 0, y: -0.030289888, z: 0}
 --- !u!198 &198173088260679690
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -183,7 +183,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1746711206
+  randomSeed: 1583235415
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3469,7 +3469,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 683251718
+  randomSeed: -379664297
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6743,7 +6743,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1500562893
+  randomSeed: -277027206
   InitialModule:
     serializedVersion: 3
     enabled: 1

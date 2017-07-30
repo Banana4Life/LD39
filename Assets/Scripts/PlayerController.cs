@@ -99,4 +99,5 @@ public class PlayerController : MonoBehaviour
 		point.y = transform.position.y;
 		transform.LookAt(point);
 	}
+	
 }
