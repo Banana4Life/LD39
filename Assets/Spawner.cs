@@ -30,6 +30,8 @@ public class Spawner : MonoBehaviour
 	public GameObject miningBase;
 	public List<GameObject> types;
 
+	private GameObject container;
+
 	[ReadOnly] public Queue<GameObject> entities = new Queue<GameObject>();
 
 	[ReadOnly] public int nextType;
@@ -41,6 +43,8 @@ public class Spawner : MonoBehaviour
 
 	public bool dead;
 
+	private static int spawnerCount;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -49,6 +53,8 @@ public class Spawner : MonoBehaviour
 		dead = false;
 		enemyCount = 0;
 		UpgradeDefences();
+		container = new GameObject("Container " + spawnerCount++);
+		container.transform.parent = gameObject.transform;
 	}
 	
 	// Update is called once per frame
@@ -94,7 +100,7 @@ public class Spawner : MonoBehaviour
 	{
 		var spawnPos = at.transform.position;
 		spawnPos.y = 0;
-		var enemy = Instantiate(type, spawnPos, Quaternion.identity, gameObject.transform);
+		var enemy = Instantiate(type, spawnPos, Quaternion.identity, container.transform);
 		enemy.name = "Enemy LVL " + (nextType + 1) + ": " + enemyCount++;
 		var enemyController = enemy.GetComponent<EnemyController>();
 		enemyController.mineObject = miningBase;
