@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+	public bool InClouds;
 
 	public int power = 50; // is running out
 	
@@ -15,7 +16,15 @@ public class PlayerController : MonoBehaviour
 
 	public bool restart = true;
 	public bool autoPilot = true;
-	
+
+	private CloudGenerator cloudsGenerator;
+
+	private void Start()
+	{
+		InClouds = false;
+		cloudsGenerator= GameObject.Find("Clouds").GetComponent<CloudGenerator>();
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -24,6 +33,12 @@ public class PlayerController : MonoBehaviour
 
 		AutoPilot();
 		lookToMouse();
+		checkIfInClouds();
+	}
+
+	private void checkIfInClouds()
+	{
+		InClouds = cloudsGenerator.HasClouds(transform.position);
 	}
 
 	private void doFire()

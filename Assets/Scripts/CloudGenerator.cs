@@ -6,22 +6,24 @@ public class CloudGenerator : MonoBehaviour {
 
 	public Texture2D cloudMap;
 	public GameObject cloud;
+	private GameObject asteroidContainer;
 	
 	// Use this for initialization
 	void Start () {
-		generateClouds(GameObject.Find("Asteroids"));
+		asteroidContainer = GameObject.Find("Asteroids");
+		generateClouds();
 	}
 	
-	public void generateClouds(GameObject astroidContainer)
+	public void generateClouds()
 	{
 		
-		var distScript = astroidContainer.GetComponent<RandomDistributionScript>();
+		var distScript = asteroidContainer.GetComponent<RandomDistributionScript>();
 		int i = 0;
 		for (var x = 0; x < distScript.bounds.x; x+=2)
 		{
 			for (var z = 0; z < distScript.bounds.z; z+=2)
 			{
-				if (hasClouds(new Vector2(x, z), cloudMap, astroidContainer))
+				if (hasClouds(new Vector2(x, z), cloudMap, asteroidContainer))
 				{
 					var aCloud = Instantiate(cloud, gameObject.transform);
 					aCloud.transform.localPosition = new Vector3(x, 2, z);
@@ -38,5 +40,11 @@ public class CloudGenerator : MonoBehaviour {
 		int z = Mathf.FloorToInt(mapPos.y / distScript.bounds.z * clouds.height);
 		var pixel = clouds.GetPixel(x, z);
 		return pixel.a > 0;
+	}
+
+	public bool HasClouds(Vector3 worldPos)
+	{
+		var containerPos = worldPos - asteroidContainer.transform.position;
+		return hasClouds(new Vector2(containerPos.x, containerPos.z), cloudMap, asteroidContainer);
 	}
 }
