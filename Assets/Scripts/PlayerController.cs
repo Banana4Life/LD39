@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+
+	public int power = 50; // is running out
+	
 	public float speed = 3;
 	
 	public List<GameObject> list;
@@ -16,21 +19,50 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		doMovement();
+		doFire();
+
+		AutoPilot();
+	}
+
+	private void doFire()
+	{
+		var left = Input.GetMouseButton(0);
+		var right = Input.GetMouseButton(1);
+		
+		var laser = gameObject.GetComponentInChildren<ParticleSystem>();
+		if (right)
+		{
+			laser.Play();
+		}
+		else
+		{
+			laser.Stop();
+		}
+	}
+
+	private void doMovement()
+	{
 		var vert = Input.GetAxisRaw("Vertical");
 		var hori = Input.GetAxisRaw("Horizontal");
 		GetComponent<Rigidbody>().AddForce(new Vector3(hori, 0, vert).normalized * speed, ForceMode.Impulse);
-		
+	}
+
+	private void AutoPilot()
+	{
 		var agent = GetComponent<NavMeshAgent>();
 		agent.enabled = autoPilot;
-		//var dist = Mathf.CeilToInt(lastTarget.GetComponent<Collider>().bounds.size.y / 2); 
-		if (restart)
+		if (autoPilot)
 		{
-			nextTarget(agent);
-			restart = false;
-		}
-		else if (EnemyController.DidAgentReachDestination(agent)) //Arrived.
-		{
-			nextTarget(agent);
+			if (restart)
+			{
+				nextTarget(agent);
+				restart = false;
+			}
+			else if (EnemyController.DidAgentReachDestination(agent)) //Arrived.
+			{
+				nextTarget(agent);
+			}
 		}
 	}
 
