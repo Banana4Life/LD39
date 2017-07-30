@@ -24,10 +24,12 @@ public class EnemyController : Destroyable
         var agent = GetComponent<NavMeshAgent>();
         if (!active)
         {
+            GetComponentInChildren<Engine>().gameObject.GetComponent<ParticleSystem>().Pause();
             agent.SetDestination(gameObject.transform.position);
         }
         else 
         {
+            GetComponentInChildren<Engine>().gameObject.GetComponent<ParticleSystem>().Play();
             if (restart)
             {
                 flipTarget(agent);

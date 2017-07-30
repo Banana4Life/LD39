@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 4788348266975660}
   - component: {fileID: 198027980631446420}
   - component: {fileID: 199494736283900110}
+  - component: {fileID: 114096423702521758}
   m_Layer: 14
   m_Name: Engine
   m_TagString: Untagged
@@ -441,6 +442,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &114096423702521758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1321437341244782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6696bb18ee2463f842d04d7fc6df6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114311373140323330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -601,7 +613,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -406963152
+  randomSeed: -186589090
   InitialModule:
     serializedVersion: 3
     enabled: 1

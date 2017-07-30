@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 4984155621379122}
   - component: {fileID: 198832022273622282}
   - component: {fileID: 199076912580345002}
+  - component: {fileID: 114094860766576534}
   m_Layer: 14
   m_Name: Engine
   m_TagString: Untagged
@@ -314,6 +315,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exploded: 0
+--- !u!114 &114094860766576534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563178081934276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6696bb18ee2463f842d04d7fc6df6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136161871277003218
 CapsuleCollider:
   m_ObjectHideFlags: 1
