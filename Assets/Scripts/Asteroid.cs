@@ -14,4 +14,10 @@ public class Asteroid : MonoBehaviour {
 		Destroy(gameObject);
 		// TODO spawn particles and stuff
 	}
+
+	private void OnParticleCollision(GameObject other)
+	{
+		Destroy(other);
+		Explode();
+	}
 }
