@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -114,11 +115,11 @@ public class Spawner : MonoBehaviour
 		{
 			return;
 		}
-		nextType++;
-		if (types.Count > nextType - 1)
+		if (nextType + 1 < types.Count)
 		{
-			nextType--;
+			nextType++;
 		}
+		
 		for (var j = 0; j < enemyPerWave; j++)
 		{
 			var spawned = doSpawnEnemy(types[nextType], miningBase);
