@@ -18,7 +18,7 @@ public class Destroyable : MonoBehaviour
     {
         if (explosion != null)
         {
-            Instantiate(explosion, gameObject.transform.position, Quaternion.identity).GetComponent<Explosion>().explode();
+            Instantiate(explosion, gameObject.transform.position, Quaternion.Euler(-90,0,0)).GetComponent<Explosion>().explode();
         }        
         Destroy(gameObject);
     }

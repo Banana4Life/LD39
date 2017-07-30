@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 250
+  explosion: {fileID: 0}
   shielded: 1
 --- !u!136 &136645887006243046
 CapsuleCollider:

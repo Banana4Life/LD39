@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 25
+  explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
 --- !u!114 &114806861710307600
 MonoBehaviour:
   m_ObjectHideFlags: 1
