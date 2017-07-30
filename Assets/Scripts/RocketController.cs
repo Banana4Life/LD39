@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class RocketController : MonoBehaviour
 {
 	public GameObject target;
 	public float speed;
+	public bool JumpToTargetLevel;
 
 	// Update is called once per frame
 	void Update () {
@@ -13,7 +15,15 @@ public class RocketController : MonoBehaviour
 		{
 			var dir = target.transform.position - transform.position;
 			dir.y = 0;
-			transform.localPosition += dir.normalized * speed;
+			var newPos = transform.position + dir.normalized * speed;
+			if (JumpToTargetLevel)
+			{
+				newPos.y = target.transform.position.y;
+			}
+			transform.position = newPos;
+			var targetPos = target.transform.position;
+			targetPos.y = newPos.y;
+			transform.LookAt(targetPos);
 		}
 	}
 
