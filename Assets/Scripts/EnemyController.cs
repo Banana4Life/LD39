@@ -44,7 +44,7 @@ public class EnemyController : Destroyable
     private void RemoveBlockingAsteroids()
     {
         const int asteroidArea = 1 << 3;
-        const int asteroidLayer = 1 << 8;
+        int asteroidLayer = LayerMask.NameToLayer("Asteroids");
         NavMeshHit navMeshHit;
         if (NavMesh.SamplePosition(new Vector3(transform.position.x, 0, transform.position.z), out navMeshHit, 1, -1))
         {
