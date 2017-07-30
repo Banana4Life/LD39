@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4391285858647790}
   - component: {fileID: 33847764104791756}
-  - component: {fileID: 65350400552103670}
   - component: {fileID: 114106736337915038}
   - component: {fileID: 114056306030818836}
+  - component: {fileID: 136729948848626496}
   m_Layer: 8
   m_Name: 3_Astroid Large
   m_TagString: Untagged
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100739322972980}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.3, y: 0, z: -4.3}
+  m_LocalPosition: {x: -36.6, y: 0, z: -17.2}
   m_LocalScale: {x: 3, y: 0.7, z: 3}
   m_Children:
   - {fileID: 4163126864057246}
@@ -80,18 +80,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1100739322972980}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65350400552103670
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1100739322972980}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114056306030818836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c6d6e3b05054cd996ce1fa931dfa0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 25
 --- !u!114 &114106736337915038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,6 +107,19 @@ MonoBehaviour:
   m_Center: {x: 0, y: 0, z: 0}
   m_Area: 3
   m_AffectedAgents: ffffffff
+--- !u!136 &136729948848626496
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1100739322972980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.59
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.07, y: 0, z: 0}
 --- !u!212 &212153965907513128
 SpriteRenderer:
   m_ObjectHideFlags: 1

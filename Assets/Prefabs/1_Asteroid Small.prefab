@@ -35,9 +35,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4236949823631348}
-  - component: {fileID: 65913768393088710}
   - component: {fileID: 114250478817231142}
   - component: {fileID: 114088163692511954}
+  - component: {fileID: 136915561905195334}
   m_Layer: 8
   m_Name: 1_Asteroid Small
   m_TagString: Untagged
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1949748232477746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.72, y: 0, z: 0.7}
+  m_LocalPosition: {x: -32.02, y: 0, z: -12.200001}
   m_LocalScale: {x: 1, y: 0.73, z: 1}
   m_Children:
   - {fileID: 4399145550424830}
@@ -72,18 +72,6 @@ Transform:
   m_Father: {fileID: 4236949823631348}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &65913768393088710
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1949748232477746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 1, z: 0.6}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114088163692511954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,6 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c6d6e3b05054cd996ce1fa931dfa0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 25
 --- !u!114 &114250478817231142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +99,19 @@ MonoBehaviour:
   m_Center: {x: 0, y: 0, z: 0}
   m_Area: 3
   m_AffectedAgents: ffffffff
+--- !u!136 &136915561905195334
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949748232477746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.03, y: 0, z: 0}
 --- !u!212 &212130311671771370
 SpriteRenderer:
   m_ObjectHideFlags: 1

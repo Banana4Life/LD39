@@ -21,5 +21,6 @@ public class Plane : MonoBehaviour
 	public void UpdateNavMesh()
 	{
 		GetComponent<NavMeshSurface>().BuildNavMesh();	
+		Debug.Log("Updating Navmesh for. " +gameObject.name);
 	}
 }

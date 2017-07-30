@@ -147,7 +147,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65913768393088710, guid: baa5decf148124d60a4800bee0d213b9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: baa5decf148124d60a4800bee0d213b9, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &206782947 stripped
@@ -232,7 +233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.1212312, z: 1.1212307}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &314957258
 Prefab:
@@ -271,7 +272,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4071225148755384, guid: 09735ba0daade4b9da3f99fc37fd4a8f, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114627430852140160, guid: 09735ba0daade4b9da3f99fc37fd4a8f,
         type: 2}
@@ -598,6 +599,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b3c1c251e5b546089f513221f01316f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &824349377 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1949748232477746, guid: baa5decf148124d60a4800bee0d213b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 36121906}
+--- !u!136 &824349378
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 824349377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: -0.03, y: 0, z: 0}
 --- !u!1 &837231385 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1816780206614690, guid: d063ceecd54524a5fa5a24bd51500318,
@@ -722,6 +741,16 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: randomSeed
+      value: 642524814
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
   m_IsPrefabParent: 0
@@ -804,8 +833,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4161232859183738, guid: ad0b56ca95ace49199811a3d2f70815f, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 23873492258700254, guid: ad0b56ca95ace49199811a3d2f70815f,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 515a60b4336834a9eaf1f40d113b655a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad0b56ca95ace49199811a3d2f70815f, type: 2}
   m_IsPrefabParent: 0
@@ -897,7 +931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1190823864
 MonoBehaviour:
