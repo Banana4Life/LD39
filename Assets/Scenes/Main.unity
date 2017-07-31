@@ -19873,8 +19873,8 @@ MonoBehaviour:
   InClouds: -6.4419823
   InCleaner: -193.24608
   Power: 2500
-  PowerRegain: 250
-  PowerRegainInClouds: 20
+  PowerRegain: 300
+  PowerRegainInClouds: 70
   PowerPerShot: 100
   speed: 4.5
   list:
