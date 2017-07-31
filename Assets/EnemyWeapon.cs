@@ -20,23 +20,24 @@ public class EnemyWeapon : MonoBehaviour
 	
 	public WeaponType type;
 	public int range;
+	public Color color = Color.white;
 
 	public float cooldown = 2f;
 
 	[ReadOnly] public float cooldownValue; 
 	    
-	public AudioSource laserSound;
-
+	private GameObject playerObject;
+	private AudioSource sound;
 	private bool playing;
 
 	[ReadOnly] public int cycleCount = 0;
 	[ReadOnly] public float burstTime = 0;
 	[ReadOnly] public float deltaBurstStart = 0;
 	[ReadOnly] public int soundsPlayed = 1;
-	
 	// Use this for initialization
 	void Start ()
 	{
+		playerObject = GameObject.Find("Player");
 		ParticleSystem ps = gameObject.GetComponentInChildren<ParticleSystem>();
 		if (ps)
 		{
@@ -49,6 +50,7 @@ public class EnemyWeapon : MonoBehaviour
 			cycleCount = bursts[0].cycleCount;
 			burstTime = bursts[0].repeatInterval;
 		}
+		sound = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -102,32 +104,42 @@ public class EnemyWeapon : MonoBehaviour
 		}
 	}
 
+	private void playSound()
+	{
+		if (!sound.isPlaying)
+		{
+			sound.Play();
+		}
+	}
+
+	private void stopSound()
+	{
+		if (sound.isPlaying)
+		{
+			sound.Stop();
+		}
+	}
+
 	private void Shoot()
 	{
-		var player = GameObject.Find("Player");
-		var playerPos = player.transform.position;
+		var playerPos = playerObject.transform.position;
 		var distance = (playerPos - gameObject.transform.position).sqrMagnitude;
 		if (distance < range * range)
 		{
-			var laserSound = GetComponent<AudioSource>();
+			playSound();
 			switch (type)
 			{
 				case WeaponType.LASER:
-					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
-					{
-						laser.Play();
-						playing = true;
-						laserSound.Play();
-						soundsPlayed = 1;
-						deltaBurstStart = 0;
-					}	
+					shootLaser();
+					break;
+				case WeaponType.SILLYLASER:
+					shootSillyLaser();
 					break;
 				case WeaponType.ROCKET:
-					gameObject.GetComponentInChildren<ParticleSystem>().Play();
-					var rocket = Instantiate(projectile, gameObject.transform.position, Quaternion.identity, GameObject.Find("Projectiles").transform);
-					var rocketController = rocket.GetComponent<RocketController>();
-					rocketController.target = player;
-					rocketController.speed = 1;
+					shootRocket();
+					break;
+				case WeaponType.GIANTLASER:
+					shootGiantLaser();
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
@@ -135,13 +147,66 @@ public class EnemyWeapon : MonoBehaviour
 		}
 	}
 
+	private void shootLaser()
+	{
+		foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
+		{
+			laser.Play();
+			playing = true;
+			soundsPlayed = 1;
+			deltaBurstStart = 0;
+		}	
+	}
+
+	private void shootSillyLaser()
+	{
+		shootLaser();
+	}
+
+	private void shootRocket()
+	{
+		gameObject.GetComponentInChildren<ParticleSystem>().Play();
+		var rocket = Instantiate(projectile, gameObject.transform.position, Quaternion.identity, GameObject.Find("Projectiles").transform);
+		var rocketController = rocket.GetComponent<RocketController>();
+		rocketController.target = playerObject;
+		rocketController.speed = 1;
+	}
+
+	private void shootGiantLaser()
+	{
+		var laser = Instantiate(projectile);
+		var laserController = laser.GetComponent<LaserController>();
+		var barrel = GetComponentInChildren<Barrel>().gameObject;
+		laserController.source = barrel;
+		laserController.player = playerObject;
+		laserController.color = color;
+		var pos = barrel.transform.position;
+		pos.y++;
+		laser.transform.position = pos;
+
+		var playerPos = playerObject.transform.position;
+		playerPos.y = pos.y;
+		
+		laser.transform.LookAt(playerPos);
+	}
+
+	private void stopShoot()
+	{
+		stopSound();
+		foreach (var partSys in gameObject.GetComponentsInChildren<ParticleSystem>())
+		{
+			partSys.Stop();
+		}
+	}
+
 	private void SeekPlayer()
 	{
-		var playerPos = GameObject.Find("Player").transform.position;
+		var playerPos = playerObject.transform.position;
 		var distance = (playerPos - gameObject.transform.position).sqrMagnitude;
 		switch (type)
 		{
 			case WeaponType.LASER:
+			case WeaponType.GIANTLASER:
 				if (distance < range * range)
 				{
 					playerPos.y = gameObject.transform.position.y;

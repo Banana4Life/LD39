@@ -175,7 +175,8 @@ public class RandomDistributionScript : MonoBehaviour {
 		{
 			Random.seed = seed;
 		}
-		
+
+		int counter = 0;
 		for(int i = 0; i < amount; i++)
 		{
 			//distribution
@@ -250,7 +251,7 @@ public class RandomDistributionScript : MonoBehaviour {
 			//create new object
 			int poolIndex = GetPrefabIndex(Random.value);
 			GameObject go = GameObject.Instantiate(pool[poolIndex], worldPos, Quaternion.identity) as GameObject;
-			go.name = pool[poolIndex].name;	
+			go.name = pool[poolIndex].name + "_" + ++counter;	
 			go.transform.parent = groups[poolIndex].transform;		
 			
 			//color
