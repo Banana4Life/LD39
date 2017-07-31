@@ -244,7 +244,13 @@ public class PlayerController : Destroyable
 
 	public override void Destroy()
 	{
-		// TODO game over
+		base.Destroy();
+		Invoke(nameof(GameOver), 1f);
+	}
+
+	private void GameOver()
+	{
+		
 	}
 	
 	public void startInCloud()

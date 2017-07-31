@@ -17,6 +17,10 @@ public class CameraController : MonoBehaviour
 
 	void Update ()
 	{
+		if (player == null)
+		{
+			return;
+		}
 		var playerPos = player.transform.position;
 		transform.position = new Vector3(playerPos.x, playerPos.y + 10, playerPos.z);
 		var playerController = player.GetComponent<PlayerController>();

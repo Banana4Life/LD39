@@ -75,7 +75,6 @@ public class LaserController : MonoBehaviour
 	private void DoShoot()
 	{
 		var explosionSize = 3f;
-		Debug.Log("Shot");
 		var expl = Instantiate(Explosion, GameObject.Find("Explosions").transform);
 		expl.transform.position = lockedPosition;
 		expl.transform.localScale *= explosionSize;

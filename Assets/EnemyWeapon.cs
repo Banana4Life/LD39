@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public enum WeaponType
@@ -54,6 +55,10 @@ public class EnemyWeapon : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		if (playerObject == null)
+		{
+			return;
+		}
 		SeekPlayer();
 
 		if (type == WeaponType.SILLYLASER)
