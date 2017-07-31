@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114605613921657996}
   - component: {fileID: 136558704802714686}
   - component: {fileID: 65638488396984850}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RocketPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4925073088271822}
   - component: {fileID: 212905510062278360}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,8 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6208598f2833f401ebe86cd8c63f00a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 20
+  explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
   target: {fileID: 0}
   speed: 0
+  JumpToTargetLevel: 0
 --- !u!136 &136558704802714686
 CapsuleCollider:
   m_ObjectHideFlags: 1

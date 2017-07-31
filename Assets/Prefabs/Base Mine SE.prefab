@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4770275423593432}
   - component: {fileID: 212318066458068290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cannon-big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4881943567545774}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4017738426327116}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base Mine SE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,6 +93,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1424975354854652
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4489590792315076}
+  - component: {fileID: 114173203236604582}
+  m_Layer: 10
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1448895340864452
 GameObject:
   m_ObjectHideFlags: 1
@@ -102,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4841551672677034}
   - component: {fileID: 114967624665085268}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +153,7 @@ GameObject:
   - component: {fileID: 198702906318632374}
   - component: {fileID: 199919286769293284}
   - component: {fileID: 114980451787183198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +170,7 @@ GameObject:
   - component: {fileID: 4304028317145240}
   - component: {fileID: 198739936887629206}
   - component: {fileID: 199096523484847924}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4014583180978580}
   - component: {fileID: 212990115082095206}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Base-01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +218,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4930857654648462}
-  m_Layer: 0
+  - component: {fileID: 136272381339063006}
+  - component: {fileID: 114463673226229208}
+  m_Layer: 10
   m_Name: RocketLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +237,7 @@ GameObject:
   - component: {fileID: 4342745726372386}
   - component: {fileID: 23732513229534860}
   - component: {fileID: 33693356313243642}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: ShieldRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +255,7 @@ GameObject:
   - component: {fileID: 198313742734093650}
   - component: {fileID: 199710490418241142}
   - component: {fileID: 114100128605760258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4842140035092504}
   - component: {fileID: 212005316680528520}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cannon-small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4616230047652340}
   - component: {fileID: 114913356782034780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,6 +377,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4017738426327116}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4489590792315076
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424975354854652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4930857654648462}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4491111931460078
 Transform:
@@ -495,7 +526,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.6928, y: 0.1, z: -0.6262}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4489590792315076}
   m_Father: {fileID: 4881943567545774}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -574,6 +606,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: {fileID: 198313742734093650}
+--- !u!114 &114173203236604582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424975354854652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c7e631b59d54042a9f4a31fc40108d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1442892534712392, guid: 2d583b1da75904fd48e85b14ce0ea715, type: 2}
+  type: 2
+  range: 10
+  cooldown: 3
+  shootDuration: 0
+  cooldownValue: 0
 --- !u!114 &114217553172171686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -586,6 +635,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 120
+  explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
+--- !u!114 &114463673226229208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726928566905882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9714401133b44d18660ea1e8f67ca7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 200
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
 --- !u!114 &114599112393916522
 MonoBehaviour:
@@ -625,9 +687,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c7e631b59d54042a9f4a31fc40108d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
   type: 0
   range: 10
   cooldown: 2
+  shootDuration: 0.5
   cooldownValue: 0
 --- !u!114 &114967624665085268
 MonoBehaviour:
@@ -640,9 +704,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c7e631b59d54042a9f4a31fc40108d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
   type: 0
   range: 5
   cooldown: 2
+  shootDuration: 0.5
   cooldownValue: 0
 --- !u!114 &114980451787183198
 MonoBehaviour:
@@ -656,6 +722,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: {fileID: 198702906318632374}
+--- !u!136 &136272381339063006
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726928566905882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 4.82
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136367336246246044
 CapsuleCollider:
   m_ObjectHideFlags: 1

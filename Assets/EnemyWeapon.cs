@@ -9,12 +9,14 @@ using UnityEngine;
 public enum WeaponType
 {
 	LASER,
-	BIGLASER
+	BIGLASER,
+	ROCKET
 }
 
 public class EnemyWeapon : MonoBehaviour
 {
-
+	public GameObject projectile;
+	
 	public WeaponType type;
 	public int range;
 
@@ -43,7 +45,8 @@ public class EnemyWeapon : MonoBehaviour
 
 	private void Shoot()
 	{
-		var playerPos = GameObject.Find("Player").transform.position;
+		var player = GameObject.Find("Player");
+		var playerPos = player.transform.position;
 		var distance = (playerPos - gameObject.transform.position).sqrMagnitude;
 		if (distance < range * range)
 		{
@@ -62,6 +65,12 @@ public class EnemyWeapon : MonoBehaviour
 						laser.Play();
 					}
 					Invoke("stopShoot", shootDuration);	
+					break;
+				case WeaponType.ROCKET:
+					var rocket = Instantiate(projectile, gameObject.transform.position, Quaternion.identity, GameObject.Find("Projectiles").transform);
+					var rocketController = rocket.GetComponent<RocketController>();
+					rocketController.target = player;
+					rocketController.speed = 1;
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
@@ -95,6 +104,9 @@ public class EnemyWeapon : MonoBehaviour
 				{
 					gameObject.transform.Rotate(0, 1, 0);
 				}
+				break;
+			case WeaponType.ROCKET:
+				// Nothing
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();

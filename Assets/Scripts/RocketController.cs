@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketController : MonoBehaviour
+public class RocketController : Destroyable
 {
 	public GameObject target;
 	public float speed;
@@ -15,7 +15,7 @@ public class RocketController : MonoBehaviour
 		{
 			var dir = target.transform.position - transform.position;
 			dir.y = 0;
-			var newPos = transform.position + dir.normalized * speed;
+			var newPos = transform.position + dir.normalized * speed * Time.deltaTime;
 			if (JumpToTargetLevel)
 			{
 				newPos.y = target.transform.position.y;
@@ -29,12 +29,21 @@ public class RocketController : MonoBehaviour
 
 	private void OnCollisionEnter(Collision other)
 	{
-		Debug.Log("collision enter");
-		Destroy(gameObject);
+		explodeWith(other);
+	}
+
+	private void explodeWith(Collision other)
+	{
+		var destroyable = other.gameObject.GetComponent<Destroyable>();
+		if (destroyable != null)
+		{
+			destroyable.Hit(200);
+		}
+		Destroy();
 	}
 
 	private void OnCollisionStay(Collision other)
 	{
-		Debug.Log("collision stay");
+		explodeWith(other);
 	}
 }

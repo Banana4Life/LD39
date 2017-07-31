@@ -7,8 +7,8 @@ public class Destroyable : MonoBehaviour
 
     public virtual void Hit(int amount)
     {
-        life--;
-        if (life == 0)
+        life -= amount;
+        if (life <= 0)
         {
             Destroy();
         }
