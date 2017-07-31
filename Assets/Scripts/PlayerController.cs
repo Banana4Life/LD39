@@ -152,7 +152,9 @@ public class PlayerController : Destroyable
 		{
 			if (deltaLastShot > (dualLaser ? firingRateDual : firingRate) && deltaLastRocket > firingRateRocket)
 			{
-				Instantiate(rocketPrefab, gameObject.transform.position, gameObject.transform.rotation, GameObject.Find("Projectiles").transform);
+				var pos = plasma1.gameObject.transform.position;
+				pos.y += 0.5f;
+				Instantiate(rocketPrefab, pos, gameObject.transform.rotation, GameObject.Find("Projectiles").transform);
 				deltaLastRocket = 0;
 			}
 		}
