@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114216463301564776}
   - component: {fileID: 65079879161631956}
   m_Layer: 0
-  m_Name: GiantLaser
+  m_Name: Weapon-Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
