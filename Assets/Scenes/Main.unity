@@ -1061,6 +1061,12 @@ Prefab:
       propertyPath: m_Name
       value: RocketLauncher (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114927531598494278, guid: 6da562ea77db35348ab1f0cccb2ae5a4,
+        type: 2}
+      propertyPath: leftOver
+      value: 
+      objectReference: {fileID: 1824042964496084, guid: 3c6cbf214ab6f2b41bf526f6c4c84f12,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6da562ea77db35348ab1f0cccb2ae5a4, type: 2}
   m_IsPrefabParent: 0
@@ -1533,6 +1539,12 @@ Prefab:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].maxCount
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114927531598494278, guid: 6da562ea77db35348ab1f0cccb2ae5a4,
+        type: 2}
+      propertyPath: leftOver
+      value: 
+      objectReference: {fileID: 1824042964496084, guid: 3c6cbf214ab6f2b41bf526f6c4c84f12,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6da562ea77db35348ab1f0cccb2ae5a4, type: 2}
   m_IsPrefabParent: 0
@@ -10823,6 +10835,12 @@ Prefab:
       propertyPath: m_Name
       value: RocketLauncher (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114927531598494278, guid: 6da562ea77db35348ab1f0cccb2ae5a4,
+        type: 2}
+      propertyPath: leftOver
+      value: 
+      objectReference: {fileID: 1824042964496084, guid: 3c6cbf214ab6f2b41bf526f6c4c84f12,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6da562ea77db35348ab1f0cccb2ae5a4, type: 2}
   m_IsPrefabParent: 0
@@ -14328,6 +14346,12 @@ Prefab:
       propertyPath: m_Name
       value: RocketLauncher (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114927531598494278, guid: 6da562ea77db35348ab1f0cccb2ae5a4,
+        type: 2}
+      propertyPath: leftOver
+      value: 
+      objectReference: {fileID: 1824042964496084, guid: 3c6cbf214ab6f2b41bf526f6c4c84f12,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6da562ea77db35348ab1f0cccb2ae5a4, type: 2}
   m_IsPrefabParent: 0
@@ -14999,6 +15023,12 @@ Prefab:
       propertyPath: m_Name
       value: RocketLauncher (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114927531598494278, guid: 6da562ea77db35348ab1f0cccb2ae5a4,
+        type: 2}
+      propertyPath: leftOver
+      value: 
+      objectReference: {fileID: 1824042964496084, guid: 3c6cbf214ab6f2b41bf526f6c4c84f12,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6da562ea77db35348ab1f0cccb2ae5a4, type: 2}
   m_IsPrefabParent: 0
@@ -19260,6 +19290,12 @@ Prefab:
       propertyPath: m_Name
       value: RocketLauncher (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114927531598494278, guid: 6da562ea77db35348ab1f0cccb2ae5a4,
+        type: 2}
+      propertyPath: leftOver
+      value: 
+      objectReference: {fileID: 1824042964496084, guid: 3c6cbf214ab6f2b41bf526f6c4c84f12,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6da562ea77db35348ab1f0cccb2ae5a4, type: 2}
   m_IsPrefabParent: 0
