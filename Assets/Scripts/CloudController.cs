@@ -12,7 +12,7 @@ public class CloudController : MonoBehaviour
 	void Start ()
 	{
 		part = GetComponent<ParticleSystem>();
-		part.trigger.SetCollider(0, GameObject.Find("CloudModifier").transform);
+		part.trigger.SetCollider(0, GameObject.Find("CloudTracker").transform);
 	}
 
 	private void OnParticleTrigger()
@@ -28,11 +28,10 @@ public class CloudController : MonoBehaviour
 	private void handleCollision(GameObject other)
 	{
 		var parts = new List<ParticleSystem.Particle>();
-		var particleCount = part.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, parts);
-		particleCount += part.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, parts);
+		var particleCount = part.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, parts);
 		if (particleCount > 0)
 		{
-			other.GetComponent<PlayerController>().startInCloud();;
+			other.GetComponent<PlayerController>().startInCloud();
 		}
 	}
 }
