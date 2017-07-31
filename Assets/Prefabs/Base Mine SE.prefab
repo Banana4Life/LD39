@@ -636,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 120
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
+  leftOver: {fileID: 1942490419486534, guid: a719ebcdf43b1a6409a74d48afad1f2f, type: 2}
 --- !u!114 &114463673226229208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -649,6 +650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 200
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
+  leftOver: {fileID: 0}
 --- !u!114 &114599112393916522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -662,6 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 250
   explosion: {fileID: 0}
+  leftOver: {fileID: 0}
   shielded: 1
 --- !u!114 &114887045345607076
 MonoBehaviour:
@@ -676,6 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 180
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
+  leftOver: {fileID: 1317053321688450, guid: 1cce13f7f97abcd46b047de091e98721, type: 2}
 --- !u!114 &114913356782034780
 MonoBehaviour:
   m_ObjectHideFlags: 1

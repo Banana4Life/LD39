@@ -366,12 +366,6 @@ Prefab:
       propertyPath: m_Name
       value: Mine SE
       objectReference: {fileID: 0}
-    - target: {fileID: 114463673226229208, guid: 569dae68a11a34844ab099dec679633e,
-        type: 2}
-      propertyPath: explosion
-      value: 
-      objectReference: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 569dae68a11a34844ab099dec679633e, type: 2}
   m_IsPrefabParent: 0

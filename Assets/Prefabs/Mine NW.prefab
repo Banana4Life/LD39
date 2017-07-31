@@ -717,6 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 200
   explosion: {fileID: 0}
+  leftOver: {fileID: 0}
   shielded: 1
 --- !u!114 &114199698881509150
 MonoBehaviour:
@@ -740,6 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c7e631b59d54042a9f4a31fc40108d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
   type: 1
   range: 10
   cooldown: 4
@@ -756,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c7e631b59d54042a9f4a31fc40108d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
   type: 0
   range: 10
   cooldown: 2
@@ -820,6 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c7e631b59d54042a9f4a31fc40108d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
   type: 0
   range: 10
   cooldown: 2
@@ -838,6 +842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 180
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
+  leftOver: {fileID: 1270387829856470, guid: fc9a02a7f1838a54cb65d2aa9d3a9392, type: 2}
 --- !u!114 &114707511127631254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -875,6 +880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 180
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
+  leftOver: {fileID: 1317053321688450, guid: 1cce13f7f97abcd46b047de091e98721, type: 2}
 --- !u!114 &114998038661166018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -888,6 +894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 180
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
+  leftOver: {fileID: 1317053321688450, guid: 1cce13f7f97abcd46b047de091e98721, type: 2}
 --- !u!136 &136208547862996522
 CapsuleCollider:
   m_ObjectHideFlags: 1
