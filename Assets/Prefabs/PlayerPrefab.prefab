@@ -439,8 +439,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d8aa046fd3e4743920c68ad0795471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 250
+  life: 2500
   explosion: {fileID: 0}
+  leftOver: {fileID: 0}
   shielded: 1
 --- !u!114 &114430586079102700
 MonoBehaviour:
@@ -453,11 +454,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68921b862cb7f4b908d6440b198ba40f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 25
+  life: 1
   explosion: {fileID: 0}
+  leftOver: {fileID: 0}
   InClouds: 0
   InCleaner: 0
-  power: 50
+  Power: 50
+  PowerRegain: 2
+  PowerRegainInClouds: 1
   speed: 0.25
   list:
   - {fileID: 0}

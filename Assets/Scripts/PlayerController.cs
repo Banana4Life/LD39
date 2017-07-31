@@ -8,8 +8,9 @@ public class PlayerController : Destroyable
 	public float InClouds;
 	public float InCleaner;
 
-	public int Power = 50; // is running out
-	public int MaxPower = 100;
+	public float Power = 50; // is running out
+	public float PowerRegain = 2f;
+	public float PowerRegainInClouds = 1f;
 	
 	public float speed = 3;
 	
@@ -21,11 +22,13 @@ public class PlayerController : Destroyable
 	public bool isThrusting;
 
 	private CloudGenerator cloudsGenerator;
+	private Shield shield;
 
 	private void Start()
 	{
 		InClouds = 0f;
-		cloudsGenerator= GameObject.Find("Clouds").GetComponent<CloudGenerator>();
+		cloudsGenerator = GameObject.Find("Clouds").GetComponent<CloudGenerator>();
+		shield = GetComponentInChildren<Shield>();
 	}
 
 	// Update is called once per frame
@@ -36,9 +39,21 @@ public class PlayerController : Destroyable
 
 		AutoPilot();
 		lookToMouse();
+		reGenPower();
 
 		InClouds -= Time.deltaTime;
 		InCleaner -= Time.deltaTime;
+	}
+
+	public float GetShieldPower()
+	{
+		return shield.life;
+	}
+
+	private void reGenPower()
+	{
+		var gain = InClouds > 0 ? PowerRegainInClouds : PowerRegain;
+		Power = Mathf.Min(GetShieldPower(), Power + gain);
 	}
 
 	private void doFire()
@@ -104,7 +119,6 @@ public class PlayerController : Destroyable
 
 	public override void Hit(int amount)
 	{
-		var shield = GetComponentInChildren<Shield>();
 		if (shield.shielded)
 		{
 			shield.Hit(amount);
@@ -129,7 +143,7 @@ public class PlayerController : Destroyable
 	
 	public void startInCloud()
 	{
-		InClouds = 2f;
+		InClouds = 1f;
 	}
 	
 	private void OnCollisionStay(Collision other)

@@ -8,7 +8,7 @@ public class Destroyable : MonoBehaviour
 
     public virtual void Hit(int amount)
     {
-        life -= amount;
+        life = Mathf.Max(0, life - amount);
         if (life <= 0)
         {
             Destroy();

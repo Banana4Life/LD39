@@ -20,7 +20,7 @@ public class Shield : Destroyable
 		if (shielded)
 		{
 			gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;	
-			Invoke("unhit", 1f);
+			Invoke(nameof(unhit), 1f);
 		}
 	}
 
