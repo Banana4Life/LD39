@@ -22,15 +22,19 @@ public class EnemyWeapon : MonoBehaviour
 	public int range;
 
 	public float cooldown = 2f;
-	public float shootDuration = 0.5f;
 
 	[ReadOnly] public float cooldownValue; 
 	    
 	public AudioSource laserSound;
 	
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+		ParticleSystem ps = gameObject.GetComponentInChildren<ParticleSystem>();
+		if (ps)
+		{
+			cooldown = ps.main.duration;
+		}
 	}
 	
 	// Update is called once per frame
@@ -64,15 +68,13 @@ public class EnemyWeapon : MonoBehaviour
 					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
 					{
 						laser.Play();
-					}
-					Invoke("stopShoot", shootDuration);	
+					}	
 					break;
 				case WeaponType.SILLYLASER:
 					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
 					{
 						laser.Play();
 					}
-					Invoke("stopShoot", shootDuration);	
 					break;
 				case WeaponType.ROCKET:
 					var rocket = Instantiate(projectile, gameObject.transform.position, Quaternion.identity, GameObject.Find("Projectiles").transform);
