@@ -19,6 +19,8 @@ public class EnemyController : Destroyable
     public bool restart;
 
     public bool active = false;
+    
+    public AudioSource flySound;
     private ParticleSystem particleSystem;
     private Engine engine;
 
@@ -31,6 +33,7 @@ public class EnemyController : Destroyable
     // Update is called once per frame
     void Update()
     {    
+        var flySound = GetComponent<AudioSource>();
         var agent = GetComponent<NavMeshAgent>();
         if (!active)
         {
@@ -40,6 +43,12 @@ public class EnemyController : Destroyable
         }
         else 
         {
+            if (!flySound.isPlaying)
+            {
+                flySound.Play();
+            }
+            GetComponentInChildren<Engine>().gameObject.GetComponent<ParticleSystem>().Play();
+            gameObject.GetComponentInChildren<Engine>().activeEngine = true;
             particleSystem.Play();
             engine.activeEngine = true;
             if (restart)
@@ -52,6 +61,7 @@ public class EnemyController : Destroyable
                 flipTarget(agent);
             }
         }
+        //flySound.Stop();
     }
 
     public override void Hit(int amount)

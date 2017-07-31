@@ -25,6 +25,8 @@ public class EnemyWeapon : MonoBehaviour
 	public float shootDuration = 0.5f;
 
 	[ReadOnly] public float cooldownValue; 
+	    
+	public AudioSource laserSound;
 	
 	// Use this for initialization
 	void Start () {
@@ -51,6 +53,11 @@ public class EnemyWeapon : MonoBehaviour
 		var distance = (playerPos - gameObject.transform.position).sqrMagnitude;
 		if (distance < range * range)
 		{
+			var laserSound = GetComponent<AudioSource>();
+			if (!laserSound.isPlaying)
+			{
+				laserSound.Play();
+			}
 			switch (type)
 			{
 				case WeaponType.LASER:
@@ -83,6 +90,10 @@ public class EnemyWeapon : MonoBehaviour
 	{
 		foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
 		{
+			if (laserSound.isPlaying)
+			{
+				laserSound.Stop();
+			}
 			laser.Stop();
 		}
 	}
