@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4222044780031844}
   - component: {fileID: 33634273316981748}
   - component: {fileID: 114442923875459936}
-  - component: {fileID: 65187863963001444}
+  - component: {fileID: 65007620411312512}
   m_Layer: 17
   m_Name: CloudCleaner
   m_TagString: Untagged
@@ -49,7 +49,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1229552017722994}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65187863963001444
+--- !u!65 &65007620411312512
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -59,7 +59,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 10, z: 5}
+  m_Size: {x: 2, y: 10, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114442923875459936
 MonoBehaviour:
