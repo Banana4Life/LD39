@@ -8,7 +8,8 @@ public enum PowerUp
 {
 	PLASMA,
 	ROCKET,
-	LASER
+	LASER,
+	END
 }
 
 public class PlayerController : Destroyable
