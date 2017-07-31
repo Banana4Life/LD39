@@ -14,15 +14,18 @@ public class Engine : MonoBehaviour {
 	public void Update()
 	{
 		timeToSpawn -= Time.deltaTime;
-
-		if (activeEngine)
+		if (cloudCleaner != null)
 		{
-			if (timeToSpawn < 0)
+			if (activeEngine)
 			{
-				Instantiate(cloudCleaner, gameObject.transform.position, Quaternion.identity, GameObject.Find("Exhaust").transform);
-				timeToSpawn = interval;
+				if (timeToSpawn < 0)
+				{
+					Instantiate(cloudCleaner, gameObject.transform.position, Quaternion.identity, GameObject.Find("Exhaust").transform);
+					timeToSpawn = interval;
+				}	
 			}	
 		}
+		
 		doUpdate();
 
 	}

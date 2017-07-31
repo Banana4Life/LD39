@@ -609,8 +609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interval: 0.5
   timeToSpawn: 0
-  cloudCleaner: {fileID: 1229552017722994, guid: 4bf382374ab6e40c3a37fdab7ddb7eb9,
-    type: 2}
+  cloudCleaner: {fileID: 0}
   activeEngine: 0
 --- !u!114 &114330125060052494
 MonoBehaviour:
@@ -7359,7 +7358,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1323252860
+  randomSeed: 232027797
   InitialModule:
     serializedVersion: 3
     enabled: 1
