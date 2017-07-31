@@ -113,7 +113,7 @@ public class PlayerController : Destroyable
 		isThrusting = Mathf.Abs(vert) + Mathf.Abs(hori) > 0;
 
 		var dir = transform.forward * vert + transform.right * hori;
-		GetComponent<Rigidbody>().AddForce(new Vector3(dir.x, 0, dir.z).normalized * speed, ForceMode.Impulse);
+		GetComponent<Rigidbody>().AddForce(new Vector3(dir.x, 0, dir.z).normalized * speed * Time.deltaTime, ForceMode.Impulse);
 		if (isThrusting && !flySound.isPlaying)
 		{
 			flySound.Play();
