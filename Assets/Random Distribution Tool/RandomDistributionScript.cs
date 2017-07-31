@@ -306,8 +306,7 @@ public class RandomDistributionScript : MonoBehaviour {
 		//reset seed
 		Random.seed = (int)System.DateTime.Now.Ticks;
 
-		var map = GameObject.Find("Map").GetComponent<MapScript>();
-		map.UpdateAllNavMeshes();
+		GameObject.Find("Map").SendMessage("OnAsteriodsGenerated");
 	}
 	
 	private Vector2 FindMapPosition(Vector3 pos)

@@ -55,6 +55,10 @@ public class Spawner : MonoBehaviour
 		enemyCount = 0;
 		container = new GameObject("Container " + spawnerCount++);
 		container.transform.parent = gameObject.transform;
+	}
+
+	private void OnNavMeshReady()
+	{
 		UpgradeDefences();
 	}
 	

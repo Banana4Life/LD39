@@ -13,7 +13,7 @@ public class MapScript : MonoBehaviour
 	public int distance;
 	public int size;
 
-	private void Start()
+	private void OnAsteriodsGenerated()
 	{
 		for (int x = 0; x < size; x++)
 		{
@@ -25,6 +25,7 @@ public class MapScript : MonoBehaviour
 				
 		}
 		UpdateAllNavMeshes();
+		GameObject.Find("Entities").SendMessage("OnNavMeshReady");
 	}
 
 	// Update is called once per frame
