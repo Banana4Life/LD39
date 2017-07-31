@@ -221,11 +221,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
-  type: 0
+  type: 3
   range: 20
   cooldown: 2
   cooldownValue: 0
   laserSound: {fileID: 82375177942591980}
+  cycleCount: 0
+  burstTime: 0
+  deltaBurstStart: 0
+  soundsPlayed: 1
 --- !u!212 &212718009023197754
 SpriteRenderer:
   m_ObjectHideFlags: 1
