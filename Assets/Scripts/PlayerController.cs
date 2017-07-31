@@ -28,9 +28,16 @@ public class PlayerController : Destroyable
 	public AudioSource flySound;
 
 	public float firingRate = 0.2f;
+	public float firingRateDual = 0.07f;
 	
 	private bool weaponFiring = false;
 	private float deltaLastShot = 0f;
+
+	public bool dualLaser;
+	public bool leftLaser;
+
+	public GameObject plasma1;   
+	public GameObject plasma2;
 
 	private void Start()
 	{
@@ -83,32 +90,56 @@ public class PlayerController : Destroyable
 		var left = Input.GetMouseButton(0);
 		var right = Input.GetMouseButton(1);
 		
-		var laser = gameObject.GetComponentInChildren<Projectile>();
-		var ps = laser.gameObject.GetComponent<ParticleSystem>();
+		
 		if (left)
 		{
 			deltaLastShot += Time.deltaTime;
 			var v = GetComponent<Rigidbody>().velocity;
 			var rot = transform.forward;
-			var main = ps.main;
-			main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
-			if (deltaLastShot > firingRate)
+		
+			if (deltaLastShot > (dualLaser ? firingRateDual : firingRate))
 			{
-				if (ConsumePower(PowerPerShot))
+				if (!dualLaser)
 				{
-					deltaLastShot -= firingRate;
-					ps.Play();
-					laserSound.Play();
+					var laser = plasma1.GetComponentInChildren<Projectile>();
+					var ps = laser.gameObject.GetComponent<ParticleSystem>();
+					var main = ps.main;
+					main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
+					if (ConsumePower(PowerPerShot))
+					{
+						deltaLastShot = 0;
+						ps.Play();
+						laserSound.Play();
+					}
 				}
 				else
 				{
-					deltaLastShot = firingRate;
+					ParticleSystem ps = null;
+					var lasers = plasma2.GetComponentsInChildren<Projectile>();
+					int i = 0;
+					foreach (var laser in lasers)
+					{
+						if (leftLaser && i == 0)
+						{
+							ps = laser.gameObject.GetComponent<ParticleSystem>();							
+						}
+						else if (!leftLaser &&  i == 1)
+						{
+							ps = laser.gameObject.GetComponent<ParticleSystem>();
+						}
+						i++;
+					}
+					if (ps != null)
+					{
+						var main = ps.main;
+						main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
+						deltaLastShot = 0;
+						ps.Play();
+						laserSound.Play();
+					}
+					leftLaser = !leftLaser;						
 				}
 			}
-		}
-		else
-		{
-			deltaLastShot = firingRate;
 		}
 	}
 
