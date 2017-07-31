@@ -93,7 +93,7 @@ public class EnemyWeapon : MonoBehaviour
 			case WeaponType.BIGLASER:
 				if (distance < range * range)
 				{
-					gameObject.transform.Rotate(0, 2, 0);
+					gameObject.transform.Rotate(0, 1, 0);
 				}
 				break;
 			default:

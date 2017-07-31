@@ -45,6 +45,19 @@ public class EnemyController : Destroyable
         }
     }
 
+    public override void Hit(int amount)
+    {
+        var shield = GetComponentInChildren<Shield>();
+        if (shield.shielded)
+        {
+            shield.Hit(amount);
+        }
+        else
+        {
+            base.Hit(amount);
+        }
+    }
+
     private void RemoveBlockingAsteroids()
     {
         const int asteroidArea = 1 << 3;
