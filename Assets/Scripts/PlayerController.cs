@@ -1,7 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+public enum PowerUp
+{
+	PLASMA,
+	ROCKET,
+	LASER
+}
 
 public class PlayerController : Destroyable
 {
@@ -35,14 +43,15 @@ public class PlayerController : Destroyable
 	private float deltaLastShot = 0f;
 	private float deltaLastRocket = 0f;
 
-	public bool dualLaser;
-	public bool rocket;
-
-	public GameObject rocketPrefab;
+	public bool powerDualLaser;
+	public bool powerRocket;
+	public bool powerGiantLaser;
 	
+	public GameObject rocketPrefab;
+
 	[ReadOnly] public bool leftLaser;
 
-	public GameObject plasma1;   
+	public GameObject plasma1;
 	public GameObject plasma2;
 
 	private void Start()
@@ -104,9 +113,9 @@ public class PlayerController : Destroyable
 			var v = GetComponent<Rigidbody>().velocity;
 			var rot = transform.forward;
 		
-			if (deltaLastShot > (dualLaser ? firingRateDual : firingRate))
+			if (deltaLastShot > (powerDualLaser ? firingRateDual : firingRate))
 			{
-				if (!dualLaser)
+				if (!powerDualLaser)
 				{
 					var laser = plasma1.GetComponentInChildren<Projectile>();
 					var ps = laser.gameObject.GetComponent<ParticleSystem>();
@@ -148,9 +157,9 @@ public class PlayerController : Destroyable
 				}
 			}
 		}
-		if (right && rocket)
+		if (right && powerRocket)
 		{
-			if (deltaLastShot > (dualLaser ? firingRateDual : firingRate) && deltaLastRocket > firingRateRocket)
+			if (deltaLastShot > (powerDualLaser ? firingRateDual : firingRate) && deltaLastRocket > firingRateRocket)
 			{
 				var pos = plasma1.gameObject.transform.position;
 				pos.y += 0.5f;
@@ -237,6 +246,24 @@ public class PlayerController : Destroyable
 	public void startInCloud()
 	{
 		InClouds = 1f;
+	}
+
+	public void pickup(PowerUp powerUp)
+	{
+		switch (powerUp)
+		{
+			case PowerUp.PLASMA:
+				powerDualLaser = true;
+				break;
+			case PowerUp.ROCKET:
+				powerRocket = true;
+				break;
+			case PowerUp.LASER:
+				powerGiantLaser = true;
+				break;
+			default:
+				throw new ArgumentOutOfRangeException(nameof(powerUp), powerUp, null);
+		}
 	}
 
 }
