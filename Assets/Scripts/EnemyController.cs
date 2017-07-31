@@ -19,6 +19,14 @@ public class EnemyController : Destroyable
     public bool restart;
 
     public bool active = false;
+    private ParticleSystem particleSystem;
+    private Engine engine;
+
+    private void Start()
+    {
+        engine = GetComponentInChildren<Engine>();
+        particleSystem = engine.GetComponent<ParticleSystem>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -26,14 +34,14 @@ public class EnemyController : Destroyable
         var agent = GetComponent<NavMeshAgent>();
         if (!active)
         {
-            GetComponentInChildren<Engine>().gameObject.GetComponent<ParticleSystem>().Pause();
-            gameObject.GetComponentInChildren<Engine>().activeEngine = false;
-            agent.SetDestination(gameObject.transform.position);
+            particleSystem.Pause();
+            engine.activeEngine = false;
+            agent.SetDestination(transform.position);
         }
         else 
         {
-            GetComponentInChildren<Engine>().gameObject.GetComponent<ParticleSystem>().Play();
-            gameObject.GetComponentInChildren<Engine>().activeEngine = true;
+            particleSystem.Play();
+            engine.activeEngine = true;
             if (restart)
             {
                 flipTarget(agent);
