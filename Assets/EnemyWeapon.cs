@@ -26,6 +26,8 @@ public class EnemyWeapon : MonoBehaviour
 	[ReadOnly] public float cooldownValue; 
 	    
 	public AudioSource laserSound;
+
+	private bool playing = false;
 	
 	// Use this for initialization
 	void Start ()
@@ -42,11 +44,38 @@ public class EnemyWeapon : MonoBehaviour
 	{
 		SeekPlayer();
 
-		cooldownValue -= Time.deltaTime;
-		if (cooldownValue <= 0)
+		if (type == WeaponType.SILLYLASER)
 		{
-			cooldownValue = cooldown;
-			Shoot();
+			var playerPos = GameObject.Find("Player").transform.position;
+			var distance = (playerPos - gameObject.transform.position).sqrMagnitude;
+			if (distance < range * range)
+			{
+				if (!playing)
+				{
+					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
+					{
+						laser.Play();
+					}
+					playing = true;
+				}
+			}
+			else if (playing)
+			{
+				foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
+				{
+					laser.Stop();
+				}
+				playing = false;
+			}
+		}
+		else
+		{
+			cooldownValue -= Time.deltaTime;
+			if (cooldownValue <= 0)
+			{
+				cooldownValue = cooldown;
+				Shoot();
+			}
 		}
 	}
 
@@ -69,12 +98,6 @@ public class EnemyWeapon : MonoBehaviour
 					{
 						laser.Play();
 					}	
-					break;
-				case WeaponType.SILLYLASER:
-					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
-					{
-						laser.Play();
-					}
 					break;
 				case WeaponType.ROCKET:
 					gameObject.GetComponentInChildren<ParticleSystem>().Play();
@@ -117,7 +140,7 @@ public class EnemyWeapon : MonoBehaviour
 			case WeaponType.SILLYLASER:
 				if (distance < range * range)
 				{
-					gameObject.transform.Rotate(0, 1, 0);
+					gameObject.transform.Rotate(0, 0.25f, 0);
 				}
 				break;
 			case WeaponType.ROCKET:
