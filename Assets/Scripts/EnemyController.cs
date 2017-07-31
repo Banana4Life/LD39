@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Networking.NetworkSystem;
 
 public class EnemyController : Destroyable
 {
@@ -56,14 +58,31 @@ public class EnemyController : Destroyable
                 if (rb.velocity.sqrMagnitude > 0)
                 {
                     var pos = transform.position;
-                    pos.y = 1;
-                    RaycastHit sphereHit;
-                    if (Physics.SphereCast(pos, 1, transform.up, out sphereHit, 1, asteroidLayer))
+                    var height = 5f;
+                    var lower = transform.position;
+                    lower.y -= height;
+                    var upper = transform.position;
+                    upper.y += height;
+                    var colliders = Physics.OverlapCapsule(lower, upper, 1, asteroidLayer);
+                    if (colliders.Length > 0)
                     {
-                        sphereHit.collider.gameObject.GetComponent<Asteroid>().Destroy();
-                        if (activeNavPlane)
+                        Collider nearest = null;
+                        float nearstMagnitude = float.MaxValue;
+                        foreach (var c in colliders)
                         {
-                            activeNavPlane.build = true;
+                            float magn = (c.transform.position - pos).sqrMagnitude;
+                            if (magn < nearstMagnitude)
+                            {
+                                nearest = c;
+                                nearstMagnitude = magn;
+                            }
+                        }
+                        if (nearest != null) {
+                            nearest.gameObject.GetComponent<Asteroid>().Destroy();
+                            if (activeNavPlane)
+                            {
+                                activeNavPlane.build = true;
+                            }
                         }
                     }
                 }
@@ -90,6 +109,13 @@ public class EnemyController : Destroyable
         if (rocket)
         {
             Destroy(gameObject);
+            return;
+        }
+        var asteriod = other.gameObject.GetComponent<Asteroid>();
+        if (asteriod)
+        {
+            asteriod.Destroy();
+            return;
         }
     }
 
