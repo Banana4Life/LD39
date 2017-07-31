@@ -6,17 +6,20 @@ public class LaserController : MonoBehaviour
 {
 	public GameObject source;
 	public GameObject player;
+	public GameObject Explosion;
 	public Color color;
 	public float startWidth = 0.05f;
 	public float shootWidth = 1.5f;
 	public float timeToShoot = 2f;
+	public int Damage = 900;
 	
 	private GameObject spriteObject;
 	private float size;
 	private readonly Vector3 rayExtends = new Vector3(0.05f, 10, 0.05f);
 	private float time;
-
-	private int state = 0;
+	private bool locked;
+	private Vector3 lockedPosition;
+	private Collider[] colliderBuffer = new Collider[1];
 
 	private void Start()
 	{
@@ -24,24 +27,15 @@ public class LaserController : MonoBehaviour
 		size = renderer.bounds.extents.y;
 		renderer.color = color;
 		spriteObject = renderer.gameObject;
-		Invoke(nameof(GoState1), timeToShoot);
+		Invoke(nameof(LockLaser), timeToShoot);
 	}
 
 	void Update ()
 	{
-		switch (state)
+		if (locked)
 		{
-				case 0:
-					updateState0();
-					break;
-				case 1:
-					updateState1();
-					break;
+			return;
 		}
-	}
-
-	private void updateState0()
-	{
 		time += Time.deltaTime;
 		var barrelPos = source.transform.position;
 		transform.position = new Vector3(barrelPos.x, transform.position.y, barrelPos.z);
@@ -58,23 +52,36 @@ public class LaserController : MonoBehaviour
 			distance = (colliderPos - pos).magnitude;
 		}
 		
-		Debug.Log("Distance: " + distance);
 		spriteObject.transform.localScale = new Vector3(Mathf.Lerp(startWidth, shootWidth, time / timeToShoot), distance / size * 2, 1);
 		transform.LookAt(playerPos);
 	}
 
-	private void updateState1()
+	public bool IsLocked()
 	{
-		
+		return locked;
 	}
 
-	private void GoState1()
+	private void LockLaser()
 	{
-		state = 1;
+		Debug.Log("Locked");
+		Invoke(nameof(DoShoot), 2f);
+		locked = true;
+		lockedPosition = player.transform.position;
 	}
 
 	private void DoShoot()
 	{
+		Debug.Log("Shot");
+		var expl = Instantiate(Explosion, GameObject.Find("Explosions").transform);
+		expl.transform.position = lockedPosition;
+		expl.GetComponent<Explosion>().explode();
+		var lower = new Vector3(lockedPosition.x, lockedPosition.y - 10, lockedPosition.z);
+		var upper = new Vector3(lockedPosition.x, lockedPosition.y + 10, lockedPosition.z);
+		var hits = Physics.OverlapCapsuleNonAlloc(lower, upper, 1, colliderBuffer, LayerMask.GetMask("Player", "PlayerShield"));
+		if (hits > 0)
+		{
+			player.GetComponent<PlayerController>().Hit(Damage);
+		}
 		Destroy(gameObject);
 	}
 }

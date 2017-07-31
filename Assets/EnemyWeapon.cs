@@ -26,6 +26,7 @@ public class EnemyWeapon : MonoBehaviour
 	private GameObject playerObject;
 	private AudioSource sound;
 	private bool playing;
+	private GameObject currentProjectile;
 
 	[ReadOnly] public int cycleCount = 0;
 	[ReadOnly] public float burstTime = 0;
@@ -185,6 +186,7 @@ public class EnemyWeapon : MonoBehaviour
 		playerPos.y = pos.y;
 		
 		laser.transform.LookAt(playerPos);
+		currentProjectile = laser;
 	}
 
 	private void stopShoot()
@@ -203,8 +205,14 @@ public class EnemyWeapon : MonoBehaviour
 		switch (type)
 		{
 			case WeaponType.LASER:
-			case WeaponType.GIANTLASER:
 				if (distance < range * range)
+				{
+					playerPos.y = gameObject.transform.position.y;
+					gameObject.transform.LookAt(playerPos);
+				}
+				break;
+			case WeaponType.GIANTLASER:
+				if (currentProjectile == null || !currentProjectile.GetComponent<LaserController>().IsLocked())
 				{
 					playerPos.y = gameObject.transform.position.y;
 					gameObject.transform.LookAt(playerPos);
