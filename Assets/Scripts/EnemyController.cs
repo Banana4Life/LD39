@@ -27,13 +27,13 @@ public class EnemyController : Destroyable
         if (!active)
         {
             GetComponentInChildren<Engine>().gameObject.GetComponent<ParticleSystem>().Pause();
-            gameObject.GetComponentInChildren<Engine>().active = false;
+            gameObject.GetComponentInChildren<Engine>().activeEngine = false;
             agent.SetDestination(gameObject.transform.position);
         }
         else 
         {
             GetComponentInChildren<Engine>().gameObject.GetComponent<ParticleSystem>().Play();
-            gameObject.GetComponentInChildren<Engine>().active = true;
+            gameObject.GetComponentInChildren<Engine>().activeEngine = true;
             if (restart)
             {
                 flipTarget(agent);

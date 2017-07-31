@@ -16,9 +16,9 @@ public class EngineController : Engine
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	protected override void doUpdate()
 	{
-		active = player.isThrusting;
+		activeEngine = player.isThrusting;
 		var emission = part.emission;
 		emission.enabled = player.isThrusting;
 	}

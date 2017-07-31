@@ -5,24 +5,29 @@ using UnityEngine;
 public class Engine : MonoBehaviour {
 
     public float interval = 0.5f;
-    private float timeToSpawn;
+    [ReadOnly] public float timeToSpawn;
 
     public GameObject cloudCleaner;
 
-	public bool active;
+	public bool activeEngine;
 
-	void Update()
+	public void Update()
 	{
-		if (active)
+		timeToSpawn -= Time.deltaTime;
+
+		if (activeEngine)
 		{
-			timeToSpawn -= Time.deltaTime;
 			if (timeToSpawn < 0)
 			{
 				Instantiate(cloudCleaner, gameObject.transform.position, Quaternion.identity, GameObject.Find("Exhaust").transform);
 				timeToSpawn = interval;
 			}	
 		}
-		
+		doUpdate();
+
 	}
 
+	protected virtual void doUpdate()
+	{
+	}
 }
