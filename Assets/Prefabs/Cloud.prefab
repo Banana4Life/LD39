@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4013994228470322}
   - component: {fileID: 198173088260679690}
   - component: {fileID: 199836596637576004}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Thunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4294885475322498}
   - component: {fileID: 198645729565064260}
   - component: {fileID: 199816153508781706}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Debris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 71798706
+  randomSeed: -92146345
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3460,7 +3460,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1878175702
+  randomSeed: 187329123
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6734,7 +6734,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 354601955
+  randomSeed: 434404878
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6892,7 +6892,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -7136,7 +7136,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 50000
+    maxNumParticles: 10000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -7300,7 +7300,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10000
+      scalar: 2000
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9040,7 +9040,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 1
     collisionMode: 0
@@ -9139,7 +9139,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9182,7 +9182,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 32768
+      m_Bits: 131072
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

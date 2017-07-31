@@ -10,8 +10,9 @@ public class PlayerController : Destroyable
 	public float InCleaner;
 
 	public float Power = 500; // is running out
-	public float PowerRegain = 2f;
-	public float PowerRegainInClouds = 1f;
+	public float PowerRegain = 40f;
+	public float PowerRegainInClouds = 5f;
+	public float PowerPerShot = 2f;
 	
 	public float speed = 3;
 	
@@ -84,7 +85,7 @@ public class PlayerController : Destroyable
 			var rot = transform.forward;
 			var main = ps.main;
 			main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
-			if (ConsumePower(ps.emission.rateOverTime.constant * Time.deltaTime))
+			if (ConsumePower(ps.emission.rateOverTime.constant * PowerPerShot * Time.deltaTime))
 			{
 				ps.Play();
 				if (!laserSound.isPlaying)

@@ -42,8 +42,7 @@ public class EnemyController : Destroyable
             else if (DidAgentReachDestination(agent)) //Arrived.
             {
                 flipTarget(agent);
-            }            
-            RemoveBlockingAsteroids();
+            }
         }
     }
 
@@ -57,51 +56,6 @@ public class EnemyController : Destroyable
         else
         {
             base.Hit(amount);
-        }
-    }
-
-    private void RemoveBlockingAsteroids()
-    {
-        const int asteroidArea = 1 << 3;
-        int asteroidLayer = LayerMask.NameToLayer("Asteroids");
-        NavMeshHit navMeshHit;
-        if (NavMesh.SamplePosition(new Vector3(transform.position.x, 0, transform.position.z), out navMeshHit, 1, -1))
-        {
-            if ((navMeshHit.mask & asteroidArea) == asteroidArea)
-            {
-                var rb = GetComponent<Rigidbody>();
-                if (rb.velocity.sqrMagnitude > 0)
-                {
-                    var pos = transform.position;
-                    var height = 5f;
-                    var lower = transform.position;
-                    lower.y -= height;
-                    var upper = transform.position;
-                    upper.y += height;
-                    var colliders = Physics.OverlapCapsule(lower, upper, 1, asteroidLayer);
-                    if (colliders.Length > 0)
-                    {
-                        Collider nearest = null;
-                        float nearstMagnitude = float.MaxValue;
-                        foreach (var c in colliders)
-                        {
-                            float magn = (c.transform.position - pos).sqrMagnitude;
-                            if (magn < nearstMagnitude)
-                            {
-                                nearest = c;
-                                nearstMagnitude = magn;
-                            }
-                        }
-                        if (nearest != null) {
-                            nearest.gameObject.GetComponent<Asteroid>().Destroy();
-                            if (activeNavPlane)
-                            {
-                                activeNavPlane.build = true;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 
