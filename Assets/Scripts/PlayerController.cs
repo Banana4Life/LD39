@@ -149,9 +149,12 @@ public class PlayerController : Destroyable
 					{
 						var main = ps.main;
 						main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
-						deltaLastShot = 0;
-						ps.Play();
-						laserSound.Play();
+						if (ConsumePower(PowerPerShot))
+						{
+							deltaLastShot = 0;
+							ps.Play();
+							laserSound.Play();
+						}
 					}
 					leftLaser = !leftLaser;						
 				}
