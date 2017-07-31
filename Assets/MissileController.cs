@@ -23,7 +23,7 @@ public class MissileController : MonoBehaviour
 		var destroyable = other.gameObject.GetComponent<Destroyable>();
 		if (destroyable != null)
 		{
-			destroyable.Hit(50);
+			destroyable.Hit(80);
 		}
 		Destroy(gameObject);
 	}
