@@ -21,7 +21,7 @@ public class Explosion : MonoBehaviour
         audioSource.PlayOneShot(explosionSound);
         var ps = gameObject.GetComponent<ParticleSystem>();
         ps.Play();
-        gameObject.transform.parent = null; // Detach from parent to keep playing
+        gameObject.transform.parent = GameObject.Find("Explosions").transform; // Detach from parent to keep playing
         exploded = true;
     }
 
