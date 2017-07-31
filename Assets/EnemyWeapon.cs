@@ -27,7 +27,12 @@ public class EnemyWeapon : MonoBehaviour
 	    
 	public AudioSource laserSound;
 
-	private bool playing = false;
+	private bool playing;
+
+	[ReadOnly] public int cycleCount = 0;
+	[ReadOnly] public float burstTime = 0;
+	[ReadOnly] public float deltaBurstStart = 0;
+	[ReadOnly] public int soundsPlayed = 1;
 	
 	// Use this for initialization
 	void Start ()
@@ -36,6 +41,13 @@ public class EnemyWeapon : MonoBehaviour
 		if (ps)
 		{
 			cooldown = ps.main.duration;
+		}
+		if (type == WeaponType.LASER)
+		{
+			ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
+			gameObject.GetComponentInChildren<ParticleSystem>().emission.GetBursts(bursts);
+			cycleCount = bursts[0].cycleCount;
+			burstTime = bursts[0].repeatInterval;
 		}
 	}
 	
@@ -77,6 +89,17 @@ public class EnemyWeapon : MonoBehaviour
 				Shoot();
 			}
 		}
+		if (type == WeaponType.LASER && playing)
+		{
+			deltaBurstStart += Time.deltaTime;
+			if (deltaBurstStart > soundsPlayed * burstTime)
+			{
+				var laserSound = GetComponent<AudioSource>();
+				laserSound.Play();
+				soundsPlayed++;
+				playing = soundsPlayed < cycleCount;
+			}
+		}
 	}
 
 	private void Shoot()
@@ -87,16 +110,16 @@ public class EnemyWeapon : MonoBehaviour
 		if (distance < range * range)
 		{
 			var laserSound = GetComponent<AudioSource>();
-			if (!laserSound.isPlaying)
-			{
-				laserSound.Play();
-			}
 			switch (type)
 			{
 				case WeaponType.LASER:
 					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
 					{
 						laser.Play();
+						playing = true;
+						laserSound.Play();
+						soundsPlayed = 1;
+						deltaBurstStart = 0;
 					}	
 					break;
 				case WeaponType.ROCKET:
@@ -109,18 +132,6 @@ public class EnemyWeapon : MonoBehaviour
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
-		}
-	}
-
-	private void stopShoot()
-	{
-		foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
-		{
-			if (laserSound.isPlaying)
-			{
-				laserSound.Stop();
-			}
-			laser.Stop();
 		}
 	}
 
