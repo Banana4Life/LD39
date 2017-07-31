@@ -51,12 +51,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4105549252194674}
-  - component: {fileID: 33508256814661074}
+  - component: {fileID: 136478146941082266}
+  - component: {fileID: 136864482071376268}
+  - component: {fileID: 136637618435893336}
   - component: {fileID: 54991529334983348}
   - component: {fileID: 114886002830527778}
   - component: {fileID: 195914113712414292}
-  - component: {fileID: 136478146941082266}
-  - component: {fileID: 82346282771963172}
+  - component: {fileID: 82946962169961822}
   m_Layer: 10
   m_Name: Enemy2
   m_TagString: Untagged
@@ -199,13 +200,6 @@ Transform:
   m_Father: {fileID: 4105549252194674}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33508256814661074
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1307436241746088}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54991529334983348
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -221,7 +215,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!82 &82346282771963172
+--- !u!82 &82946962169961822
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -229,11 +223,12 @@ AudioSource:
   m_GameObject: {fileID: 1307436241746088}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243015279757110694, guid: ca676caadb8e44abe928aefdc4f6ae1a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 930ae303b8eb54c65a413dd3a65bc9fe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.03
-  m_Pitch: 0.84
+  m_Pitch: 0.7
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -241,7 +236,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 500
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -332,8 +327,8 @@ MonoBehaviour:
   type: 0
   range: 3
   cooldown: 0.7
-  shootDuration: 0.2
   cooldownValue: 0
+  laserSound: {fileID: 0}
 --- !u!114 &114886002830527778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,6 +349,7 @@ MonoBehaviour:
   activeNavPlane: {fileID: 0}
   restart: 0
   active: 0
+  flySound: {fileID: 82946962169961822}
 --- !u!114 &114914999620988324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -365,8 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a52a2044ebf6475cb17207751790bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
   part: {fileID: 198953434577666538}
-  flySound: {fileID: 0}
 --- !u!136 &136478146941082266
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -377,9 +373,35 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.76
-  m_Height: 3.69
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Height: 50
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.65}
+--- !u!136 &136637618435893336
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307436241746088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.55
+  m_Height: 50
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 1.44}
+--- !u!136 &136864482071376268
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1307436241746088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 50
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.45}
 --- !u!195 &195914113712414292
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -460,7 +482,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1675249398
+  randomSeed: 1332915032
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3722,7 +3744,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1423180678
+  randomSeed: -230921199
   InitialModule:
     serializedVersion: 3
     enabled: 1
