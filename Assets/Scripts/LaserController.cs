@@ -65,13 +65,6 @@ public class LaserController : MonoBehaviour
 		return locked;
 	}
 
-	private void LockLaser()
-	{
-		Debug.Log("Locked");
-		Invoke(nameof(DoShoot), timeToShoot);
-		locked = true;
-	}
-
 	private void DoShoot()
 	{
 		var explosionSize = 3f;

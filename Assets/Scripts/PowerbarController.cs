@@ -20,6 +20,10 @@ public class PowerbarController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		if (player == null)
+		{
+			return;
+		}
 		var power = playerController.Power;
 		powerbarText.text = Mathf.Round(power / initalMaxPower * 100f) + "%";
 	}

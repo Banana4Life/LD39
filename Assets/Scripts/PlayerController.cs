@@ -245,12 +245,15 @@ public class PlayerController : Destroyable
 	public override void Destroy()
 	{
 		base.Destroy();
-		Invoke(nameof(GameOver), 1f);
+		GameOver();
 	}
 
-	private void GameOver()
+	void GameOver()
 	{
-		
+		GameObject.Find("HudCanvas").SetActive(false);
+		Destroy(GameObject.Find("Directions"));
+		GameObject.Find("LoseScreenCanvas").SetActive(true);
+		Debug.Log("GameOver!");
 	}
 	
 	public void startInCloud()
