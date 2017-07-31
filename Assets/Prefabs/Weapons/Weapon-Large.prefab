@@ -143,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388991532346678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.964, y: 0, z: -0.346}
+  m_LocalPosition: {x: 0.955, y: 0, z: -0.346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4884822240303962}
@@ -272,9 +272,13 @@ MonoBehaviour:
   projectile: {fileID: 0}
   type: 0
   range: 10
+  color: {r: 1, g: 1, b: 1, a: 1}
   cooldown: 2
   cooldownValue: 1.6552432
-  laserSound: {fileID: 0}
+  cycleCount: 0
+  burstTime: 0
+  deltaBurstStart: 0
+  soundsPlayed: 1
 --- !u!114 &114382014358379848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9714401133b44d18660ea1e8f67ca7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 179
+  life: 180
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
   leftOver: {fileID: 1317053321688450, guid: 1cce13f7f97abcd46b047de091e98721, type: 2}
 --- !u!114 &114495944699700580

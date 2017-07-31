@@ -68,9 +68,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1598064323960662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.839, y: 0.1, z: 0.133}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.809, y: 0.099999905, z: 0.284}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_Children:
   - {fileID: 4598138814794294}
   m_Father: {fileID: 0}
@@ -210,9 +210,13 @@ MonoBehaviour:
   projectile: {fileID: 1442892534712392, guid: 2d583b1da75904fd48e85b14ce0ea715, type: 2}
   type: 2
   range: 10
+  color: {r: 1, g: 1, b: 1, a: 1}
   cooldown: 5
   cooldownValue: 0.855534
-  laserSound: {fileID: 0}
+  cycleCount: 0
+  burstTime: 0
+  deltaBurstStart: 0
+  soundsPlayed: 1
 --- !u!114 &114927531598494278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,9 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9714401133b44d18660ea1e8f67ca7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 200
+  life: 55
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
-  leftOver: {fileID: 1207612089384726, guid: 99e4e9c965dfec0498c97f31b431c192, type: 2}
+  leftOver: {fileID: 1824042964496084, guid: 3c6cbf214ab6f2b41bf526f6c4c84f12, type: 2}
 --- !u!198 &198804529503785480
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -286,7 +290,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2111285031
+  randomSeed: -515278710
   InitialModule:
     serializedVersion: 3
     enabled: 1
