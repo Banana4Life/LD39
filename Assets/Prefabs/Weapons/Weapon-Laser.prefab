@@ -292,9 +292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1329317021720866, guid: 01f729af94246491685bc2d15cb190a5, type: 2}
   type: 3
-  range: 20
+  range: 30
   color: {r: 1, g: 0, b: 0, a: 1}
-  cooldown: 2
+  cooldown: 6
   cooldownValue: 0
   cycleCount: 0
   burstTime: 0

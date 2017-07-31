@@ -87,7 +87,8 @@ MonoBehaviour:
   color: {r: 0, g: 0, b: 0, a: 0}
   startWidth: 0.05
   shootWidth: 1.5
-  timeToShoot: 2
+  timeToLock: 2
+  timeToShoot: 1
   Damage: 900
 --- !u!212 &212616480176455028
 SpriteRenderer:

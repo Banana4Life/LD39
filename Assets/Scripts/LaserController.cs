@@ -10,7 +10,8 @@ public class LaserController : MonoBehaviour
 	public Color color;
 	public float startWidth = 0.05f;
 	public float shootWidth = 1.5f;
-	public float timeToShoot = 2f;
+	public float timeToLock = 2f;
+	public float timeToShoot = 1f;
 	public int Damage = 900;
 	
 	private GameObject spriteObject;
@@ -19,7 +20,7 @@ public class LaserController : MonoBehaviour
 	private float time;
 	private bool locked;
 	private Vector3 lockedPosition;
-	private Collider[] colliderBuffer = new Collider[1];
+	private Collider[] colliderBuffer = new Collider[5];
 
 	private void Start()
 	{
@@ -27,7 +28,7 @@ public class LaserController : MonoBehaviour
 		size = renderer.bounds.extents.y;
 		renderer.color = color;
 		spriteObject = renderer.gameObject;
-		Invoke(nameof(LockLaser), timeToShoot);
+		Invoke(nameof(LockLaser), timeToLock);
 	}
 
 	void Update ()
@@ -41,18 +42,20 @@ public class LaserController : MonoBehaviour
 		transform.position = new Vector3(barrelPos.x, transform.position.y, barrelPos.z);
 		var pos = transform.position;
 		var playerPos = player.transform.position;
+		lockedPosition = player.transform.position;
 		playerPos.y = pos.y;
 		var dir = playerPos - pos;
 		var distance = dir.magnitude;
 		RaycastHit hit;
 		if (Physics.BoxCast(pos, rayExtends, dir, out hit, transform.rotation, distance, LayerMask.GetMask("Asteroids")))
 		{
+			lockedPosition = hit.collider.gameObject.transform.position;
 			var colliderPos = hit.collider.gameObject.transform.position;
 			colliderPos.y = pos.y;
 			distance = (colliderPos - pos).magnitude;
 		}
 		
-		spriteObject.transform.localScale = new Vector3(Mathf.Lerp(startWidth, shootWidth, time / timeToShoot), distance / size * 2, 1);
+		spriteObject.transform.localScale = new Vector3(Mathf.Lerp(startWidth, shootWidth, time / timeToLock), distance / size * 2, 1);
 		transform.LookAt(playerPos);
 	}
 
@@ -64,23 +67,31 @@ public class LaserController : MonoBehaviour
 	private void LockLaser()
 	{
 		Debug.Log("Locked");
-		Invoke(nameof(DoShoot), 2f);
+		Invoke(nameof(DoShoot), timeToShoot);
 		locked = true;
-		lockedPosition = player.transform.position;
 	}
 
 	private void DoShoot()
 	{
+		var explosionSize = 3f;
 		Debug.Log("Shot");
 		var expl = Instantiate(Explosion, GameObject.Find("Explosions").transform);
 		expl.transform.position = lockedPosition;
+		expl.transform.localScale *= explosionSize;
 		expl.GetComponent<Explosion>().explode();
 		var lower = new Vector3(lockedPosition.x, lockedPosition.y - 10, lockedPosition.z);
 		var upper = new Vector3(lockedPosition.x, lockedPosition.y + 10, lockedPosition.z);
-		var hits = Physics.OverlapCapsuleNonAlloc(lower, upper, 1, colliderBuffer, LayerMask.GetMask("Player", "PlayerShield"));
+		var hits = Physics.OverlapCapsuleNonAlloc(lower, upper, explosionSize, colliderBuffer, LayerMask.GetMask("Player", "Asteroids"));
 		if (hits > 0)
 		{
-			player.GetComponent<PlayerController>().Hit(Damage);
+			for (var i = 0; i < hits; i++)
+			{
+				var destroyable = colliderBuffer[0].GetComponent<Destroyable>();
+				if (destroyable)
+				{
+					destroyable.Hit(Damage);
+				}
+			}
 		}
 		Destroy(gameObject);
 	}
