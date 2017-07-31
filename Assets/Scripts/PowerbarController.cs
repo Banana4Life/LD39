@@ -5,21 +5,22 @@ using UnityEngine.UI;
 
 public class PowerbarController : MonoBehaviour {
 	private Text powerbarText;
-	private PlayerController player;
+	private PlayerController playerController;
 	private float initalMaxPower;
+	public GameObject player;
 	
 	// Use this for initialization
 	void Start ()
 	{
 		powerbarText = GetComponentInChildren<Text>();
-		player = GameObject.Find("Player").GetComponent<PlayerController>();
-		initalMaxPower = player.GetShieldPower();
+		playerController = player.GetComponent<PlayerController>();
+		initalMaxPower = playerController.GetShieldPower();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		var power = player.Power;
+		var power = playerController.Power;
 		powerbarText.text = Mathf.Round(power / initalMaxPower * 100f) + "%";
 	}
 }

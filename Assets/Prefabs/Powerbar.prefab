@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100%
+  m_Text: Infinity%
 --- !u!114 &114488373241499266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064a558ab13c24b4580a869b5d35078b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114804884558652276
 MonoBehaviour:
   m_ObjectHideFlags: 1

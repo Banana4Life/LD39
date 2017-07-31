@@ -65,6 +65,10 @@ public class PlayerController : Destroyable
 
 	public float GetShieldPower()
 	{
+		if (!shield)
+		{
+			shield = GetComponentInChildren<Shield>();
+		}
 		return shield.life;
 	}
 
