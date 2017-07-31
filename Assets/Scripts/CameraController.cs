@@ -22,6 +22,6 @@ public class CameraController : MonoBehaviour
 		var playerPos = player.transform.position;
 		transform.position = new Vector3(playerPos.x, playerPos.y + 10, playerPos.z);
 		var playerController = player.GetComponent<PlayerController>();
-		postProcessingBehaviour.enabled = playerController.InClouds > 0;
+		postProcessingBehaviour.enabled = playerController.InClouds > 0 && playerController.InCleaner < 0;
 	}
 }

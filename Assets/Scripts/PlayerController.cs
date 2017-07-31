@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class PlayerController : Destroyable
 {
 	public float InClouds;
+	public float InCleaner;
 
 	public int Power = 50; // is running out
 	public int MaxPower = 100;
@@ -35,14 +36,9 @@ public class PlayerController : Destroyable
 
 		AutoPilot();
 		lookToMouse();
-		checkIfInClouds();
 
 		InClouds -= Time.deltaTime;
-	}
-
-	private void checkIfInClouds()
-	{
-		//InClouds = false;
+		InCleaner -= Time.deltaTime;
 	}
 
 	private void doFire()
@@ -134,5 +130,13 @@ public class PlayerController : Destroyable
 	public void startInCloud()
 	{
 		InClouds = 2f;
+	}
+	
+	private void OnCollisionStay(Collision other)
+	{
+		if (other.gameObject.GetComponent<CloudCleaner>() != null)
+		{
+			InCleaner = 0.5f;
+		}
 	}
 }

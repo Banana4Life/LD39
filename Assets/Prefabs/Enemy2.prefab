@@ -453,6 +453,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6696bb18ee2463f842d04d7fc6df6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interval: 1
+  cloudCleaner: {fileID: 1229552017722994, guid: 4bf382374ab6e40c3a37fdab7ddb7eb9,
+    type: 2}
+  active: 0
 --- !u!114 &114311373140323330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -613,7 +617,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -186589090
+  randomSeed: 1805328217
   InitialModule:
     serializedVersion: 3
     enabled: 1

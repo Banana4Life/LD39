@@ -19,11 +19,14 @@ public class CloudModifier : MonoBehaviour
 	private static void changeAlpha(GameObject obj, float alpha)
 	{
 		var emitter = obj.GetComponent<ParticleSystem>();
-		var main = emitter.main;
-		var startColor = main.startColor;
-		var color = startColor.color;
-		color.a = alpha;
-		startColor.color = color;
-		main.startColor = startColor;
+		if (emitter != null)
+		{
+			var main = emitter.main;
+			var startColor = main.startColor;
+			var color = startColor.color;
+			color.a = alpha;
+			startColor.color = color;
+			main.startColor = startColor;	
+		}
 	}
 }
