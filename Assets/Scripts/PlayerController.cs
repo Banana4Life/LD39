@@ -29,12 +29,18 @@ public class PlayerController : Destroyable
 
 	public float firingRate = 0.2f;
 	public float firingRateDual = 0.07f;
+	public float firingRateRocket = 1f;
 	
 	private bool weaponFiring = false;
 	private float deltaLastShot = 0f;
+	private float deltaLastRocket = 0f;
 
 	public bool dualLaser;
-	public bool leftLaser;
+	public bool rocket;
+
+	public GameObject rocketPrefab;
+	
+	[ReadOnly] public bool leftLaser;
 
 	public GameObject plasma1;   
 	public GameObject plasma2;
@@ -90,10 +96,11 @@ public class PlayerController : Destroyable
 		var left = Input.GetMouseButton(0);
 		var right = Input.GetMouseButton(1);
 		
+		deltaLastShot += Time.deltaTime;
+		deltaLastRocket += Time.deltaTime;
 		
 		if (left)
 		{
-			deltaLastShot += Time.deltaTime;
 			var v = GetComponent<Rigidbody>().velocity;
 			var rot = transform.forward;
 		
@@ -139,6 +146,14 @@ public class PlayerController : Destroyable
 					}
 					leftLaser = !leftLaser;						
 				}
+			}
+		}
+		if (right && rocket)
+		{
+			if (deltaLastShot > (dualLaser ? firingRateDual : firingRate) && deltaLastRocket > firingRateRocket)
+			{
+				Instantiate(rocketPrefab, gameObject.transform.position, gameObject.transform.rotation, GameObject.Find("Projectiles").transform);
+				deltaLastRocket = 0;
 			}
 		}
 	}
