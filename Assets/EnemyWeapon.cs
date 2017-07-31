@@ -9,7 +9,7 @@ using UnityEngine;
 public enum WeaponType
 {
 	LASER,
-	BIGLASER,
+	SILLYLASER,
 	ROCKET,
 	GIANTLASER
 }
@@ -60,7 +60,7 @@ public class EnemyWeapon : MonoBehaviour
 					}
 					Invoke("stopShoot", shootDuration);	
 					break;
-				case WeaponType.BIGLASER:
+				case WeaponType.SILLYLASER:
 					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
 					{
 						laser.Play();
@@ -100,7 +100,7 @@ public class EnemyWeapon : MonoBehaviour
 					gameObject.transform.LookAt(playerPos);
 				}
 				break;
-			case WeaponType.BIGLASER:
+			case WeaponType.SILLYLASER:
 				if (distance < range * range)
 				{
 					gameObject.transform.Rotate(0, 1, 0);
