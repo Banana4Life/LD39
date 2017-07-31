@@ -77,6 +77,7 @@ public class EnemyWeapon : MonoBehaviour
 					}
 					break;
 				case WeaponType.ROCKET:
+					gameObject.GetComponentInChildren<ParticleSystem>().Play();
 					var rocket = Instantiate(projectile, gameObject.transform.position, Quaternion.identity, GameObject.Find("Projectiles").transform);
 					var rocketController = rocket.GetComponent<RocketController>();
 					rocketController.target = player;
