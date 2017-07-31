@@ -6,7 +6,6 @@ public class BaseController : MonoBehaviour
 {
 	public GameObject weapons;
 	public GameObject powerUp;
-	public Vector3 position;
 	public PowerUp powerUpType;
 
 	private bool spawned = false;
