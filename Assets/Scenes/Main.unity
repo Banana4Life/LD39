@@ -1584,7 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons: {fileID: 408789092}
   powerUp: {fileID: 0}
-  powerUpType: 0
+  powerUpType: 3
   arrow: {fileID: 0}
 --- !u!33 &365570624
 MeshFilter:
@@ -11682,7 +11682,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1985372661
+  randomSeed: 1095688121
   InitialModule:
     serializedVersion: 3
     enabled: 1
