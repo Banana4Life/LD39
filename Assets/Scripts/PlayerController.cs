@@ -68,7 +68,9 @@ public class PlayerController : Destroyable
 	{
 		var vert = Input.GetAxisRaw("Vertical");
 		var hori = Input.GetAxisRaw("Horizontal");
-		GetComponent<Rigidbody>().AddForce(new Vector3(hori, 0, vert).normalized * speed, ForceMode.Impulse);
+
+		var dir = transform.forward * vert + transform.right * hori;
+		GetComponent<Rigidbody>().AddForce(new Vector3(dir.x, 0, dir.z).normalized * speed, ForceMode.Impulse);
 	}
 
 	private void AutoPilot()
