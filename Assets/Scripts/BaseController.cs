@@ -22,6 +22,7 @@ public class BaseController : MonoBehaviour
                 powerUp.GetComponent<Pickup>().type = powerUpType;
                 spawned = true;
                 arrow.target = powerUp;
+                
             }
             if (powerUpType == PowerUp.END)
             {
