@@ -83,6 +83,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 0}
   player: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  startWidth: 0.05
+  shootWidth: 1.5
+  timeToShoot: 2
 --- !u!212 &212616480176455028
 SpriteRenderer:
   m_ObjectHideFlags: 1
