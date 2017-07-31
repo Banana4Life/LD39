@@ -1,7 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Net.Configuration;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -24,7 +22,6 @@ public class PlayerController : Destroyable
 	public bool autoPilot = true;
 	public bool isThrusting;
 
-	private CloudGenerator cloudsGenerator;
 	private Shield shield;
 
 	public AudioSource laserSound;
@@ -38,7 +35,6 @@ public class PlayerController : Destroyable
 	private void Start()
 	{
 		InClouds = 0f;
-		cloudsGenerator = GameObject.Find("Clouds").GetComponent<CloudGenerator>();
 		shield = GetComponentInChildren<Shield>();
 		Power = GetShieldPower();
 	}
