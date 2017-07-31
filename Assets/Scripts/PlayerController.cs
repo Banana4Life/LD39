@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net.Configuration;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -28,6 +29,11 @@ public class PlayerController : Destroyable
 
 	public AudioSource laserSound;
 	public AudioSource flySound;
+
+	public float firingRate = 0.2f;
+	
+	private bool weaponFiring = false;
+	private float deltaLastShot = 0f;
 
 	private void Start()
 	{
@@ -79,30 +85,30 @@ public class PlayerController : Destroyable
 		
 		var laser = gameObject.GetComponentInChildren<Projectile>();
 		var ps = laser.gameObject.GetComponent<ParticleSystem>();
-		if (right)
+		if (left)
 		{
+			deltaLastShot += Time.deltaTime;
 			var v = GetComponent<Rigidbody>().velocity;
 			var rot = transform.forward;
 			var main = ps.main;
 			main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
-			if (ConsumePower(ps.emission.rateOverTime.constant * PowerPerShot * Time.deltaTime))
+			if (deltaLastShot > firingRate)
 			{
-				ps.Play();
-				if (!laserSound.isPlaying)
+				if (ConsumePower(PowerPerShot))
 				{
+					deltaLastShot -= firingRate;
+					ps.Play();
 					laserSound.Play();
 				}
-			}
-			else
-			{
-				ps.Stop();
-				laserSound.Stop();
+				else
+				{
+					deltaLastShot = firingRate;
+				}
 			}
 		}
 		else
 		{
-			ps.Stop();
-			laserSound.Stop();
+			deltaLastShot = firingRate;
 		}
 	}
 

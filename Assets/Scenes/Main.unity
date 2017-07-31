@@ -1723,6 +1723,21 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198212119016499518, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1023812464
+      objectReference: {fileID: 0}
+    - target: {fileID: 198649698174977126, guid: 9a2963fa140cf4d689f1be3bf557f223,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2963fa140cf4d689f1be3bf557f223, type: 2}
   m_IsPrefabParent: 0
