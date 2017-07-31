@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour
+{
 
+	public int damage = 5;
 	public ParticleSystem part;
 	public List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
 
@@ -18,7 +20,7 @@ public class Projectile : MonoBehaviour {
 		if (destroyable != null)
 		{
 			int numCollisionEvents = part.GetCollisionEvents(other, collisionEvents);
-			destroyable.Hit(numCollisionEvents);
+			destroyable.Hit(5 * numCollisionEvents);
 		}
 	}
 }
