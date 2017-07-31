@@ -33,6 +33,7 @@ public class PlayerController : Destroyable
 		InClouds = 0f;
 		cloudsGenerator = GameObject.Find("Clouds").GetComponent<CloudGenerator>();
 		shield = GetComponentInChildren<Shield>();
+		Power = GetShieldPower();
 	}
 
 	// Update is called once per frame
