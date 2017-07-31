@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class CloudModifier : MonoBehaviour {
-
+public class CloudModifier : MonoBehaviour
+{
 	private void OnTriggerEnter(Collider other)
 	{
 		changeAlpha(other.gameObject, .1f);
@@ -13,19 +14,6 @@ public class CloudModifier : MonoBehaviour {
 	private void OnTriggerExit(Collider other)
 	{
 		changeAlpha(other.gameObject, 1f);
-	}
-	
-
-	void OnParticleTrigger()
-	{
-		CancelInvoke(nameof(OutOfClouds));
-		Invoke(nameof(OutOfClouds), .2f);
-		GetComponentInParent<PlayerController>().InClouds = true;
-	}
-
-	public void OutOfClouds()
-	{
-		GetComponentInParent<PlayerController>().InClouds = false;
 	}
 
 	private static void changeAlpha(GameObject obj, float alpha)

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class PlayerController : Destroyable
 {
-	public bool InClouds;
+	public float InClouds;
 
 	public int power = 50; // is running out
 	
@@ -22,7 +22,7 @@ public class PlayerController : Destroyable
 
 	private void Start()
 	{
-		InClouds = false;
+		InClouds = 0f;
 		cloudsGenerator= GameObject.Find("Clouds").GetComponent<CloudGenerator>();
 	}
 
@@ -35,6 +35,8 @@ public class PlayerController : Destroyable
 		AutoPilot();
 		lookToMouse();
 		checkIfInClouds();
+
+		InClouds -= Time.deltaTime;
 	}
 
 	private void checkIfInClouds()
@@ -120,15 +122,8 @@ public class PlayerController : Destroyable
 		// TODO game over
 	}
 	
-	void OnParticleTrigger()
+	public void startInCloud()
 	{
-		CancelInvoke(nameof(OutOfClouds));
-		Invoke(nameof(OutOfClouds), .2f);
-		InClouds = true;
-	}
-
-	public void OutOfClouds()
-	{
-		InClouds = false;
+		InClouds = 2f;
 	}
 }

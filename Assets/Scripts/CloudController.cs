@@ -32,15 +32,7 @@ public class CloudController : MonoBehaviour
 		particleCount += part.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, parts);
 		if (particleCount > 0)
 		{
-			CancelInvoke(nameof(DisableEffect));
-			player = other.GetComponent<PlayerController>();
-			player.InClouds = true;
-			Invoke(nameof(DisableEffect), 0.5f);
+			other.GetComponent<PlayerController>().startInCloud();;
 		}
-	}
-
-	public void DisableEffect()
-	{
-		player.InClouds = false;
 	}
 }
