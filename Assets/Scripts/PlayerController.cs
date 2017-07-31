@@ -145,12 +145,5 @@ public class PlayerController : Destroyable
 	{
 		InClouds = 1f;
 	}
-	
-	private void OnCollisionStay(Collision other)
-	{
-		if (other.gameObject.GetComponent<CloudCleaner>() != null)
-		{
-			InCleaner = 0.5f;
-		}
-	}
+
 }
