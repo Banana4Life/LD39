@@ -50,7 +50,7 @@ public class EnemyController : Destroyable
     public override void Hit(int amount)
     {
         var shield = GetComponentInChildren<Shield>();
-        if (shield.shielded)
+        if (shield != null && shield.shielded)
         {
             shield.Hit(amount);
         }
