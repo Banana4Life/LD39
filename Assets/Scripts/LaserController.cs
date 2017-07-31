@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserController : MonoBehaviour
@@ -28,16 +27,9 @@ public class LaserController : MonoBehaviour
 		size = renderer.bounds.extents.y;
 		renderer.color = color;
 		spriteObject = renderer.gameObject;
-		Invoke(nameof(LockLaser), timeToLock);
-	}
-
-	void Update ()
-	{
-		if (locked)
-		{
-			return;
-		}
-		time += Time.deltaTime;
+		locked = true;
+		
+		
 		var barrelPos = source.transform.position;
 		transform.position = new Vector3(barrelPos.x, transform.position.y, barrelPos.z);
 		var pos = transform.position;
@@ -55,8 +47,17 @@ public class LaserController : MonoBehaviour
 			distance = (colliderPos - pos).magnitude;
 		}
 		
-		spriteObject.transform.localScale = new Vector3(Mathf.Lerp(startWidth, shootWidth, time / timeToLock), distance / size * 2, 1);
+		spriteObject.transform.localScale = new Vector3(startWidth, distance / size * 2, 1);
 		transform.LookAt(playerPos);
+		
+		Invoke(nameof(DoShoot), timeToShoot);
+	}
+
+	private void Update()
+	{
+		time += Time.deltaTime;
+		var y = spriteObject.transform.localScale.y;
+		spriteObject.transform.localScale = new Vector3(Mathf.Lerp(startWidth, shootWidth, time / timeToShoot), y, 1);
 	}
 
 	public bool IsLocked()
