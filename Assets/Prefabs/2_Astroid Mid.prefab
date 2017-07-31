@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98c6d6e3b05054cd996ce1fa931dfa0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 35
+  life: 55
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
   leftOver: {fileID: 0}
 --- !u!114 &114806861710307600

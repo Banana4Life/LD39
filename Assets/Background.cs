@@ -5,9 +5,15 @@ using UnityEngine;
 public class Background : MonoBehaviour
 {
 	public Material debugBackground;
-
-	public bool debug;
 	
+	public bool debug;
+
+	private void Start()
+	{
+		GetComponent<MeshRenderer>().materials = new Material[0];
+	
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
