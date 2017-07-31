@@ -1381,7 +1381,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1527311194}
   - component: {fileID: 365570624}
-  - component: {fileID: 365570623}
   m_Layer: 10
   m_Name: Main Base SW
   m_TagString: Untagged
@@ -1389,20 +1388,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &365570623
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 136645887006243046, guid: 797fe911c8240468198303730fa0ed0d,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 365570622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.83
-  m_Height: 3.0998664
-  m_Direction: 2
-  m_Center: {x: 0.0000058584997, y: 0, z: 1.0563393}
 --- !u!33 &365570624
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19318,7 +19303,7 @@ Transform:
   - {fileID: 300597256}
   - {fileID: 873501058}
   m_Father: {fileID: 1527311194}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1744624228
 GameObject:
