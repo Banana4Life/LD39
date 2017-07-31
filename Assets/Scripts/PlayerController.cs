@@ -9,7 +9,7 @@ public class PlayerController : Destroyable
 	public float InClouds;
 	public float InCleaner;
 
-	public float Power = 50; // is running out
+	public float Power = 500; // is running out
 	public float PowerRegain = 2f;
 	public float PowerRegainInClouds = 1f;
 	
@@ -49,6 +49,16 @@ public class PlayerController : Destroyable
 		InCleaner -= Time.deltaTime;
 	}
 
+	public bool ConsumePower(float required = 1)
+	{
+		if (Power > required)
+		{
+			Power -= required;
+			return true;
+		}
+		return false;
+	}
+
 	public float GetShieldPower()
 	{
 		return shield.life;
@@ -57,7 +67,7 @@ public class PlayerController : Destroyable
 	private void reGenPower()
 	{
 		var gain = InClouds > 0 ? PowerRegainInClouds : PowerRegain;
-		Power = Mathf.Min(GetShieldPower(), Power + gain);
+		Power = Mathf.Min(GetShieldPower(), Power + gain * Time.deltaTime);
 	}
 
 	private void doFire()
@@ -73,10 +83,18 @@ public class PlayerController : Destroyable
 			var rot = transform.forward;
 			var main = ps.main;
 			main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
-			ps.Play();
-			if (!laserSound.isPlaying)
+			if (ConsumePower(ps.emission.rateOverTime.constant * Time.deltaTime))
 			{
-				laserSound.Play();
+				ps.Play();
+				if (!laserSound.isPlaying)
+				{
+					laserSound.Play();
+				}
+			}
+			else
+			{
+				ps.Stop();
+				laserSound.Stop();
 			}
 		}
 		else
