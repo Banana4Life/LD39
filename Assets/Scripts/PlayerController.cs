@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Configuration;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,6 +24,9 @@ public class PlayerController : Destroyable
 
 	private CloudGenerator cloudsGenerator;
 	private Shield shield;
+
+	public AudioSource laserSound;
+	public AudioSource flySound;
 
 	private void Start()
 	{
@@ -70,10 +74,15 @@ public class PlayerController : Destroyable
 			var main = ps.main;
 			main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
 			ps.Play();
+			if (!laserSound.isPlaying)
+			{
+				laserSound.Play();
+			}
 		}
 		else
 		{
 			ps.Stop();
+			laserSound.Stop();
 		}
 	}
 
@@ -86,6 +95,16 @@ public class PlayerController : Destroyable
 
 		var dir = transform.forward * vert + transform.right * hori;
 		GetComponent<Rigidbody>().AddForce(new Vector3(dir.x, 0, dir.z).normalized * speed, ForceMode.Impulse);
+		if (isThrusting && !flySound.isPlaying)
+		{
+			flySound.Play();
+		}
+		
+		if (!isThrusting && flySound.isPlaying)
+		{
+			flySound.Stop();
+		}
+		
 	}
 
 	private void AutoPilot()
