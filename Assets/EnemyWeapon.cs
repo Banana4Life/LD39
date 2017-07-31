@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
 using System.Threading;
@@ -7,7 +8,8 @@ using UnityEngine;
 
 public enum WeaponType
 {
-	LASER
+	LASER,
+	BIGLASER
 }
 
 public class EnemyWeapon : MonoBehaviour
@@ -16,7 +18,8 @@ public class EnemyWeapon : MonoBehaviour
 	public WeaponType type;
 	public int range;
 
-	public int cooldown = 2;
+	public float cooldown = 2f;
+	public float shootDuration = 0.5f;
 
 	[ReadOnly] public float cooldownValue; 
 	
@@ -44,29 +47,58 @@ public class EnemyWeapon : MonoBehaviour
 		var distance = (playerPos - gameObject.transform.position).sqrMagnitude;
 		if (distance < range * range)
 		{
-			var laser = gameObject.GetComponentInChildren<ParticleSystem>();
-			if (laser != null)
+			switch (type)
 			{
-				laser.Play();
-				Invoke("stopShoot", 0.5f);	
+				case WeaponType.LASER:
+					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
+					{
+						laser.Play();
+					}
+					Invoke("stopShoot", shootDuration);	
+					break;
+				case WeaponType.BIGLASER:
+					foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
+					{
+						laser.Play();
+					}
+					Invoke("stopShoot", shootDuration);	
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
 			}
 		}
 	}
 
 	private void stopShoot()
 	{
-		var laser = gameObject.GetComponentInChildren<ParticleSystem>();
-		laser.Stop();
+		foreach (var laser in gameObject.GetComponentsInChildren<ParticleSystem>())
+		{
+			laser.Stop();
+		}
 	}
 
 	private void SeekPlayer()
 	{
 		var playerPos = GameObject.Find("Player").transform.position;
 		var distance = (playerPos - gameObject.transform.position).sqrMagnitude;
-		if (distance < range * range)
+		switch (type)
 		{
-			playerPos.y = gameObject.transform.position.y;
-			gameObject.transform.LookAt(playerPos);
+			case WeaponType.LASER:
+				if (distance < range * range)
+				{
+					playerPos.y = gameObject.transform.position.y;
+					gameObject.transform.LookAt(playerPos);
+				}
+				break;
+			case WeaponType.BIGLASER:
+				if (distance < range * range)
+				{
+					gameObject.transform.Rotate(0, 2, 0);
+				}
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
 		}
+		
 	}
 }
