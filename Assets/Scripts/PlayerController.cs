@@ -7,7 +7,8 @@ public class PlayerController : Destroyable
 {
 	public float InClouds;
 
-	public int power = 50; // is running out
+	public int Power = 50; // is running out
+	public int MaxPower = 100;
 	
 	public float speed = 3;
 	
