@@ -16,6 +16,7 @@ public class PlayerController : Destroyable
 
 	public bool restart = true;
 	public bool autoPilot = true;
+	public bool isThrusting;
 
 	private CloudGenerator cloudsGenerator;
 
@@ -68,6 +69,8 @@ public class PlayerController : Destroyable
 	{
 		var vert = Input.GetAxisRaw("Vertical");
 		var hori = Input.GetAxisRaw("Horizontal");
+
+		isThrusting = Mathf.Abs(vert) + Mathf.Abs(hori) > 0;
 
 		var dir = transform.forward * vert + transform.right * hori;
 		GetComponent<Rigidbody>().AddForce(new Vector3(dir.x, 0, dir.z).normalized * speed, ForceMode.Impulse);
