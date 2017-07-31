@@ -24,7 +24,7 @@ public class Destroyable : MonoBehaviour
         if (leftOver != null)
         {
             var instanceLeftOver = Instantiate(leftOver);
-            instanceLeftOver.transform.position = gameObject.transform.position;
+            instanceLeftOver.transform.position = gameObject.transform.position + Vector3.up * 0.01f;
         }
         Destroy(gameObject);
     }
