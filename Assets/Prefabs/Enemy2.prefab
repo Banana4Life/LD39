@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2c9a3bed66141fdad671716918a536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 25
+  life: 120
   explosion: {fileID: 1026717160814218, guid: 74ae32f79fcda4c85965793d391fed11, type: 2}
   leftOver: {fileID: 0}
   mineObject: {fileID: 0}
