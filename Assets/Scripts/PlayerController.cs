@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -53,6 +52,10 @@ public class PlayerController : Destroyable
 		var ps = laser.gameObject.GetComponent<ParticleSystem>();
 		if (right)
 		{
+			var v = GetComponent<Rigidbody>().velocity;
+			var rot = transform.forward;
+			var main = ps.main;
+			main.startSpeed = 5f + Vector3.Project(v, rot).magnitude;
 			ps.Play();
 		}
 		else
