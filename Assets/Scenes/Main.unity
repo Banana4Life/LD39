@@ -1046,7 +1046,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons: {fileID: 91119155}
   powerUp: {fileID: 1793005569111192, guid: 6105f81df8a435d4ebf51f8c436b0d6c, type: 2}
-  position: {x: 0, y: 0, z: 0}
   powerUpType: 0
 --- !u!4 &364315785
 Transform:
@@ -8730,7 +8729,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons: {fileID: 1299338448}
   powerUp: {fileID: 1767828579735276, guid: c423899f03703f04fa547d986b5e7679, type: 2}
-  position: {x: 0, y: 0, z: 0}
   powerUpType: 1
 --- !u!1 &748976809
 GameObject:
