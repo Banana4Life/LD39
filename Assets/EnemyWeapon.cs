@@ -10,7 +10,8 @@ public enum WeaponType
 {
 	LASER,
 	BIGLASER,
-	ROCKET
+	ROCKET,
+	GIANTLASER
 }
 
 public class EnemyWeapon : MonoBehaviour
