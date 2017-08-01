@@ -32,7 +32,7 @@ public class BaseController : MonoBehaviour
                 }
 
                 Destroy(gameObject);
-                // TODO OUTRO
+                GameObject.Find("Player").GetComponent<PlayerController>().Win();
             }
         }
     }
