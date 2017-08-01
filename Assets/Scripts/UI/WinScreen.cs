@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoseScreen : MonoBehaviour {
+public class WinScreen : MonoBehaviour {
 
 	void Start () {
-		GameObject.Find("LoseExitButton").GetComponent<Button>().onClick.AddListener(OnExit);
-		GameObject.Find("LoseRestartButton").GetComponent<Button>().onClick.AddListener(OnRestart);
+		GameObject.Find("WinExitButton").GetComponent<Button>().onClick.AddListener(OnExit);
+		GameObject.Find("WinRestartButton").GetComponent<Button>().onClick.AddListener(OnRestart);
 	}
 	
 	private void OnExit()
