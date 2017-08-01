@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class IntroController : MonoBehaviour
 {
-	[ReadOnly] public int blend = 0;
-	[ReadOnly] public float delta = 0;
-	[ReadOnly] public bool playIntro;
+	public int blend = 0;
+	public float delta = 0;
+	public bool playIntro;
 	public float[] blendTimes = {5f, 3f, 7f};
 	private Vector3[] movement = {new Vector3(0.02f, 0, -0.03f), new Vector3(-0.03f, -0.03f, -0.05f), new Vector3(-0.01f, 0, -0.02f)};
 	public GameObject[] blends;
