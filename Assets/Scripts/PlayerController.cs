@@ -25,7 +25,7 @@ public class PlayerController : Destroyable
 	public float speed = 3;
 	
 	public List<GameObject> list;
-	[ReadOnly] public int walkTo;
+	public int walkTo;
 
 	public bool restart = true;
 	public bool autoPilot = true;
@@ -50,7 +50,7 @@ public class PlayerController : Destroyable
 	
 	public GameObject rocketPrefab;
 
-	[ReadOnly] public bool leftLaser;
+	public bool leftLaser;
 
 	public GameObject plasma1;
 	public GameObject plasma2;

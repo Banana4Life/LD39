@@ -33,12 +33,12 @@ public class Spawner : MonoBehaviour
 
 	private GameObject container;
 
-	[ReadOnly] public Queue<GameObject> entities = new Queue<GameObject>();
+	public Queue<GameObject> entities = new Queue<GameObject>();
 
-	[ReadOnly] public int nextType;
-	[ReadOnly] public float timeToSpawn;
+	public int nextType;
+	public float timeToSpawn;
 	public float interval = 3;
-	[ReadOnly] public int enemyCount;
+	public int enemyCount;
 
 	public int enemyPerWave = 5;
 

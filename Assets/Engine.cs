@@ -5,7 +5,7 @@ using UnityEngine;
 public class Engine : MonoBehaviour {
 
     public float interval = 0.5f;
-    [ReadOnly] public float timeToSpawn;
+    public float timeToSpawn;
 
     public GameObject cloudCleaner;
 

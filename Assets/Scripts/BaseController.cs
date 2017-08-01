@@ -9,7 +9,7 @@ public class BaseController : MonoBehaviour
     public PowerUp powerUpType;
 
     private bool spawned = false;
-    [ReadOnly] public ArrowController arrow;
+    public ArrowController arrow;
 
     // Update is called once per frame
     void Update()

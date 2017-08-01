@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-	[ReadOnly] public GameObject target;
+	public GameObject target;
 
 	public List<GameObject> targets;
-	[ReadOnly] public int index;
+	public int index;
 
 	void Update ()
 	{

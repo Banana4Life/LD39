@@ -22,17 +22,17 @@ public class EnemyWeapon : MonoBehaviour
 
 	public float cooldown = 2f;
 
-	[ReadOnly] public float cooldownValue; 
+	public float cooldownValue; 
 	    
 	private GameObject playerObject;
 	private AudioSource sound;
 	private bool playing;
 	private GameObject currentProjectile;
 
-	[ReadOnly] public int cycleCount = 0;
-	[ReadOnly] public float burstTime = 0;
-	[ReadOnly] public float deltaBurstStart = 0;
-	[ReadOnly] public int soundsPlayed = 1;
+	public int cycleCount = 0;
+	public float burstTime = 0;
+	public float deltaBurstStart = 0;
+	public int soundsPlayed = 1;
 	// Use this for initialization
 	void Start ()
 	{
