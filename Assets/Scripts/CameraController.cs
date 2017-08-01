@@ -26,4 +26,19 @@ public class CameraController : MonoBehaviour
 		var playerController = player.GetComponent<PlayerController>();
 		postProcessingBehaviour.enabled = playerController.InClouds > 0 && playerController.InCleaner < 0;
 	}
+
+	void setMusicFilter()
+	{
+		var playerController = player.GetComponent<PlayerController>();
+		var backgrundmusic = GetComponent<AudioSource>();
+		var filter = GetComponent<AudioDistortionFilter>();
+		if (playerController.InClouds > 0 && playerController.InCleaner < 0)
+		{
+			filter.distortionLevel = 0.6f;
+		}
+		else
+		{
+			filter.distortionLevel = 0;
+		}
+	}
 }
