@@ -9,5 +9,27 @@
     "comments": []
   },
   "web": "https://banana4life.github.io/LegendarySpaceSpaceSpace/latest",
+  "cheats": [
+    {
+      "label": "Reset Shield Power",
+      "gameObject": "Player",
+      "message": "OnMagicResetShield"
+    },
+    {
+      "label": "Enable Dual Laser",
+      "gameObject": "Player",
+      "message": "OnMagicEnableDualLaser"
+    },
+    {
+      "label": "Enable Rockets",
+      "gameObject": "Player",
+      "message": "OnMagicEnableRocket"
+    },
+    {
+      "label": "Mega Power Recharge",
+      "gameObject": "Player",
+      "message": "OnMagicMegaPowerRegain"
+    }
+  ],
   "authors": ["Jonas Dann", "Phillip Schichtel", "Anselm Brehme", "Katharina Spinner"]
 }
