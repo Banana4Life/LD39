@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.4464891, g: 0.49632698, b: 0.5747258, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -12257,6 +12257,8 @@ GameObject:
   - component: {fileID: 1190823864}
   - component: {fileID: 1190823865}
   - component: {fileID: 1190823866}
+  - component: {fileID: 1190823867}
+  - component: {fileID: 1190823868}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12428,7 +12430,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -12441,6 +12443,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!167 &1190823867
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190823858}
+  m_Enabled: 1
+  m_MinDistance: 10
+  m_MaxDistance: 30
+  m_ReverbPreset: 9
+  m_Room: -1000
+  m_RoomHF: 0
+  m_DecayTime: 2.91
+  m_DecayHFRatio: 1.3
+  m_Reflections: -602
+  m_ReflectionsDelay: 0.015
+  m_Reverb: -302
+  m_ReverbDelay: 0.022
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
+--- !u!170 &1190823868
+AudioDistortionFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190823858}
+  m_Enabled: 1
+  m_DistortionLevel: 0
 --- !u!1001 &1207157404
 Prefab:
   m_ObjectHideFlags: 0
@@ -25729,7 +25762,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d16e91a32aefe4e03b8a6f93a9dbdb18, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.03
   m_Pitch: 0.3
   Loop: 1
   Mute: 0
