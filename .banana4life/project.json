@@ -1,0 +1,13 @@
+{
+  "name": "Legendary Space Space Space",
+  "description": "Something with spaceships and much fun!",
+  "jam": {
+    "name": "Ludum Dare",
+    "number": 39,
+    "theme": "Running out of Power",
+    "site": "https://ldjam.com/events/ludum-dare/39/legendary-space-space-space",
+    "comments": []
+  },
+  "web": "https://banana4life.github.io/LegendarySpaceSpaceSpace/latest",
+  "authors": ["Jonas Dann", "Phillip Schichtel", "Anselm Brehme", "Katharina Spinner"]
+}
