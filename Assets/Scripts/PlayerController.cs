@@ -272,6 +272,26 @@ public class PlayerController : Destroyable
 		InClouds = 1f;
 	}
 
+	public void OnMagicResetShield()
+	{
+		shield.life = 2500;
+	}
+
+	public void OnMagicEnableDualLaser()
+	{
+		powerDualLaser = true;
+	}
+
+	public void OnMagicEnableRocket()
+	{
+		powerRocket = true;
+	}
+
+	public void OnMagicMegaPowerRegain()
+	{
+		PowerRegain = PowerRegainInClouds = 1000;
+	}
+
 	public void pickup(PowerUp powerUp)
 	{
 		switch (powerUp)
