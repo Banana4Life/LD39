@@ -245,14 +245,25 @@ public class PlayerController : Destroyable
 	public override void Destroy()
 	{
 		base.Destroy();
+		Lose();
+	}
+
+	public void Lose()
+	{
 		GameOver();
+		GameObject.Find("LoseScreenCanvas").SetActive(true);
+	}
+
+	public void Win()
+	{
+		GameOver();
+		GameObject.Find("WinScreenCanvas").SetActive(true);
 	}
 
 	void GameOver()
 	{
 		GameObject.Find("HudCanvas").SetActive(false);
 		Destroy(GameObject.Find("Directions"));
-		GameObject.Find("LoseScreenCanvas").SetActive(true);
 		Debug.Log("GameOver!");
 	}
 	
